@@ -1,0 +1,9 @@
+<h1>Welcome to Wearwolf</h1>
+
+<div class="callout primary">
+Daily High: <%= @darksky.high %>
+Daily Low: <%= @darksky.low %>
+Chance of Precipitation: <%= (@darksky.precipitation.to_f.round(2)) * 100 %>%
+Summary: <%= @darksky.summary %>
+<% @ip %>
+</div>
