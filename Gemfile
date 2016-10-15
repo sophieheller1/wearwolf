@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'pry'
 gem 'foundation-rails'
+gem 'listen'
 
 
 group :development, :test do
