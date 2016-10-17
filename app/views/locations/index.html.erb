@@ -1,9 +1,7 @@
-
-
 <div class="location-container">
   <div class="callout primary">
     <div class="greeting">
-      Hello, <%= @geolocation.city %>!
+      Hello, <%= current_user.email %>!
     </div>
     Daily High: <%= (@darksky.high).round %>
     Daily Low: <%= (@darksky.low).round %>
