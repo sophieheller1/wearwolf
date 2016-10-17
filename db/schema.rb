@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013211737) do
+ActiveRecord::Schema.define(version: 20161017201743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conditions", force: :cascade do |t|
+    t.integer "maxtemp",       null: false
+    t.integer "mintemp",       null: false
+    t.integer "precipitation", null: false
+    t.integer "humidity",      null: false
+    t.string  "description"
+  end
+
+  create_table "garments", force: :cascade do |t|
+    t.string  "name",      null: false
+    t.boolean "is_male"
+    t.boolean "is_female"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "city",      null: false
+    t.string "state",     null: false
+    t.string "zip",       null: false
+    t.string "country",   null: false
+    t.string "latitude",  null: false
+    t.string "longitude", null: false
+  end
+
+  create_table "suggestions", force: :cascade do |t|
+    t.integer "garment_id"
+    t.integer "condition_id"
+    t.index ["condition_id"], name: "index_suggestions_on_condition_id", using: :btree
+    t.index ["garment_id"], name: "index_suggestions_on_garment_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
