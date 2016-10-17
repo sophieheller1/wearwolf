@@ -41,6 +41,13 @@ body {
   text-shadow: 1px 1px 1px $black
 }
 
+.mascot {
+  display: inline-block;
+  border-radius: 80px;
+  width: 30%;
+  padding: 20px;
+}
+
 .signed_in_as {
   display: inline-block;
   font-family: 'Merienda', cursive;
@@ -68,6 +75,7 @@ body {
   padding: 50px;
   margin-left: 200px;
   margin-right: 200px;
+  width: 50%;
 }
 
 .greeting {
@@ -105,4 +113,10 @@ body {
 
 .top-padded {
   padding-top: 30px;
+}
+
+.wolf-suit {
+  background: url('http://edgardaily.com/media/18180/zoo-portraits-wolf.jpg?anchor=center&mode=crop&width=870&height=488&rnd=130886855540000000') no-repeat;
+  background-size: contain;
+  width: 50%;
 }
