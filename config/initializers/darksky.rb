@@ -22,6 +22,10 @@ class Darksky
     @data['daily']['data'][0]['precipProbability']
   end
 
+  def humidity
+    @data['daily']['data'][0]['humidity']
+  end
+
   def summary
     @data['daily']['data'][0]['summary']
   end
