@@ -1,6 +1,5 @@
 require './config/initializers/geolocation'
 require './config/initializers/darksky'
-require 'pry'
 
 require 'dotenv-rails'
 Dotenv.load
@@ -15,13 +14,13 @@ class LocationsController < ApplicationController
     render :index
   end
 
-  def show # navigate to favorite, which is a location previously saved to database
+  # def show # navigate to favorite, which is a location previously saved to database
     # click link to favorite ---> see saved location, probably need to add favorites column to user model or maybe just a favorites table?
 
-    @location = Location.find(params[:id])
-    @darksky = Darksky.new(@location.latitude, @location.longitude)
-
-  end
+  #   @location = Location.find(params[:id])
+  #   @darksky = Darksky.new(@location.latitude, @location.longitude)
+  #
+  # end
 
 
 
