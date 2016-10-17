@@ -23,7 +23,7 @@ class Darksky
   end
 
   def summary
-    @data['daily']['summary']
+    @data['daily']['data'][0]['summary']
   end
 
   private

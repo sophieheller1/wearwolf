@@ -1,9 +1,13 @@
-<h1>Welcome to Wearwolf</h1>
 
-<div class="callout primary">
-Daily High: <%= @darksky.high %>
-Daily Low: <%= @darksky.low %>
-Chance of Precipitation: <%= (@darksky.precipitation.to_f.round(2)) * 100 %>%
-Summary: <%= @darksky.summary %>
-<% @ip %>
+
+<div class="location-container">
+  <div class="callout primary">
+    <div class="greeting">
+      Hello, <%= @geolocation.city %>!
+    </div>
+    Daily High: <%= (@darksky.high).round %>
+    Daily Low: <%= (@darksky.low).round %>
+    Chance of Precipitation: <%= (@darksky.precipitation.to_f * 100).round %>%
+    Summary: <%= @darksky.summary %>
+  </div>
 </div>

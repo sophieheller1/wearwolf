@@ -7,36 +7,38 @@ class Geolocation
   def initialize(ip)
     @ip = ip
     @data = get_location
-    @data = default_location
+    # @data = default_location if city.empty?
   end
 
   def city
     @data['city']
   end
 
-  def state
-    @data['state']
+  def latitude
+    @data['latitude']
   end
 
-  def country
-    @data['country_name']
+  def longitude
+    @data['longitude']
   end
 
   private
   def get_location
-    response = Net::HTTP.get_location(uri)
+    response = Net::HTTP.get_response(uri)
     JSON.parse(response.body)
   end
 
   def uri
-    URI('http://freegeoip.net/json/#{@ip}')
+    # URI.parse(URI.encode("http://freegeoip.net/json/#{@ip}"))
+    URI("http://freegeoip.net/json/#{@ip}")
   end
 
-  def default_location
-    {
-      'ip' => @ip,
-      'latitude' => 42.2848,
-      'longitude' => -71.0741,
-    }
-  end
+  # def default_location
+  #   {
+  #     'ip' => @ip,
+  #     'latitude' => 32.6785,
+  #     'longitude' => 91.1826,
+  #     'city' => 'Transylvania'
+  #   }
+  # end
 end
