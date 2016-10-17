@@ -12,7 +12,6 @@ class LocationsController < ApplicationController
     @geolocation = Geolocation.new(@ip)  # maybe this is just because it's local, only getting bs ip
     # @geolocation = Geolocation.new('50.241.127.209')# this actually works, which means the code should be right
     @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
-    binding.pry
     render :index
   end
 
