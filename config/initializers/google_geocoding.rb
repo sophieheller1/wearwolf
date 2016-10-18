@@ -4,7 +4,7 @@ require 'net/http'
 class GoogleGeocoding
   attr_reader :data
 
-  def initalize(city)
+  def initialize(city)
     @city = city
     @data = get_coordinates
   end

@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   PREFERENCE = [
-    'cold', 'neutral', 'hot'
+    ['cold', 'cold'], ['neutral', 'neutral'], ['hot', 'hot']
   ]
 
   GENDER = [

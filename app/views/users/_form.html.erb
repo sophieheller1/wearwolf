@@ -5,8 +5,8 @@
     <%= f.text_field :favorite, placeholder: 'Transylvania', id:"favorite-location" %>
   </div>
   <div class="row top-padded">
-    <%= f.label :preference, "I run?" %>
-    <%= f.collection_radio_buttons :preference, @preference_collection, :first, :last %>
+    <%= f.label :preference, "I run?"%><br>
+    <div class="space-form"><%= f.collection_radio_buttons(:preference, @preference_collection, :first, :last) %></div>
   </div>
   <div class="change-gender top-padded">
     <%= f.label :gender %>
