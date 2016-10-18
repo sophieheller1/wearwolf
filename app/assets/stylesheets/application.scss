@@ -80,7 +80,8 @@ body {
 
 .greeting {
   padding: 10px;
-  margin: 10px;
+  margin-top: 10px;
+
 }
 
 // .callout {
@@ -113,6 +114,28 @@ body {
 
 .top-padded {
   padding-top: 30px;
+}
+
+.profile-form {
+  padding: 50px;
+}
+
+.large-6 {
+  padding: 30px;
+  margin: 20px;
+}
+
+.change-favorite {
+  margin-top: 300px;
+}
+
+.flash-container {
+  text-align: center;
+  background: $coral;
+  font-family: 'Hind', sans-serif;
+  font-size: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 // .wolf-suit {

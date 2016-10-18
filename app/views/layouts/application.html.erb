@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
 
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Merienda?selection.family=Merienda">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -31,6 +31,11 @@
         <% end %>
       </div>
     </div>
+    <% flash.each do |key, value| %>
+    <div class="flash-container">
+      <%= value %>
+    </div>
+    <% end %>
     <div class="main-page">
       <%= yield %>
     </div>
