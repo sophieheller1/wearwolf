@@ -16,6 +16,9 @@ class LocationsController < ApplicationController
     # @city = 'Boston'
     # binding.pry
     # @googlegeocoding = GoogleGeocoding.new(@city)
+    # @darksky = Darksky.new(@googlegeocoding.latitude)
+
+
 
     render :index
   end

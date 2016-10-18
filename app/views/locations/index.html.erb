@@ -1,7 +1,7 @@
 <div class="search-bar">
   <%= form_tag(locations_path, :method => 'get', id: 'search-form') do %>
-  <%= text_field_tag :search, params[:search], placeholder: 'Search Locations', class:"search-form" %>
-  <%= submit_tag 'Search', class:"search-button" %>
+  <%= text_field_tag :search, params[:search], placeholder: 'Enter City', class:"search-form" %>
+  <%= submit_tag 'Search', class:"location-search search-button" %>
   <% end %>
 </div>
 
@@ -9,11 +9,23 @@
 <div class="location-container">
   <div class="callout primary">
     <div class="greeting">
-      Hello, <%= current_user.email %>!
+      Hello, <%= current_user.email %>! <br>
+      The weather at your current location is:
     </div>
-    Daily High: <%= (@darksky.high).round %>
-    Daily Low: <%= (@darksky.low).round %>
-    Chance of Precipitation: <%= (@darksky.precipitation.to_f * 100).round %>%
-    Summary: <%= @darksky.summary %>
+    <div class="report">
+      <ul>
+        <li>Daily High: <%= (@darksky.high).round %></li>
+        <li>Daily Low: <%= (@darksky.low).round %></li>
+        <li>Chance of Precipitation: <%= (@darksky.precipitation.to_f * 100).round %>%</li>
+        <li>Humitiy: <%= (@darksky.humidity.to_f * 100).round %>%</li>
+        <li>Summary: <%= @darksky.summary %></li>
+      </ul>
+    </div>
+    <div class="suggestion">
+      Based on today's weather report, you should wear: <br>
+      <ul>
+
+      </ul>
+    </div>
   </div>
 </div>

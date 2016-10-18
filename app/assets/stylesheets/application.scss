@@ -17,6 +17,7 @@ body {
   padding-bottom: 70px;
   border-radius: 10px;
   text-align: center;
+  margin: 0 auto;
 }
 
 .loginnav {
@@ -76,17 +77,18 @@ body {
   margin-left: 200px;
   margin-right: 200px;
   width: 50%;
+  display: center;
+  margin: 0 auto;
 }
 
 .greeting {
   padding: 10px;
-  margin-top: 10px;
 
 }
 
-// .callout {
-//   padding: 10px;
-// }
+.callout {
+  padding: 10px;
+}
 
 .user-buttons {
   display: inline-block;
@@ -118,6 +120,7 @@ body {
 
 .profile-form {
   padding: 50px;
+  margin: 0 auto;
 }
 
 .large-6 {
@@ -140,6 +143,15 @@ body {
 
 .space-form {
   padding: 10px;
+}
+
+.report {
+  text-align: left;
+}
+
+.search-bar{
+  padding: 10px;
+  margin: 10px;
 }
 
 // .wolf-suit {
