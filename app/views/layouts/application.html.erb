@@ -10,7 +10,7 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body data-env="<%= ENV['GOOGLE_MAPS_GEOCODING_API_KEY'] %>">
+  <body data-env="<%= [ENV['GOOGLE_MAPS_GEOCODING_API_KEY'], ENV['DARK_SKY_API_KEY']] %>">
     <div class="top-bar row">
       <div class="name">
         <h1>Wearwolf</h1>
