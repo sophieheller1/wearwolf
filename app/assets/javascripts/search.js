@@ -13,6 +13,7 @@ $(document).ready(function() {
 
     get_location.done(function(data){
       var lat = data.results[0]['geometry']['location']['lat'];
+      $('.current-location').replaceWith(city);
       var lng = data.results[0]['geometry']['location']['lng'];
       var darksky_key = $('body').data('env')[1];
 
@@ -30,6 +31,9 @@ $(document).ready(function() {
         var summary = data.daily.data[0]['summary'];
         console.log(summary);
       })
+
+
+
 
       // put city on page, like the weather in Boston is
       // maybe a separate button for show what to wear (can remove button if things make more sense)
