@@ -6,7 +6,6 @@ $(document).ready(function() {
     event.preventDefault();
     var city = $('.search-form').val();
     var google_key = $('body').data('env');
-    debugger;
 
     var get_location = $.ajax({
       method: "get",
@@ -14,10 +13,13 @@ $(document).ready(function() {
     });
 
     get_location.done(function(data){
+      var lat = data.results[0]['geometry']['location']['lat']
+      var long = data.results[0]['geometry']['location']['long']
+
+      
       // save variables and parse them in function
       // put city on page, like the weather in Boston is
       // maybe a separate button for show what to wear (can remove button if things make more sense)
-      console.log(data);
     });
   });
 
