@@ -27,15 +27,18 @@ $(document).ready(function() {
         var high = data.daily.data[0]['temperatureMax'];
         var low = data.daily.data[0]['temperatureMin'];
         var precipitation = data.daily.data[0]['precipProbability'];
-        var humidity = data.daily.data[0]['humidity'];
+        precipitation = Math.round((precipitation * 100));
+        var humidity = Math.round((humidity * 100));
         var summary = data.daily.data[0]['summary'];
-        console.log(summary);
+        console.log(humidity);
+
+        $('#high').replaceWith(high);
+        $('#low').replaceWith(low);
+        $('#precipitation').replaceWith(precipitation);
+        $('#humidity').replaceWith(humidity);
+        $('#summary').replaceWith(summary);
       })
 
-
-
-
-      // put city on page, like the weather in Boston is
       // maybe a separate button for show what to wear (can remove button if things make more sense)
     });
   });

@@ -14,11 +14,11 @@
     </div>
     <div class="report">
       <ul>
-        <li>Daily High: <%= (@darksky.high).round %></li>
-        <li>Daily Low: <%= (@darksky.low).round %></li>
-        <li>Chance of Precipitation: <%= (@darksky.precipitation.to_f * 100).round %>%</li>
-        <li>Humitiy: <%= (@darksky.humidity.to_f * 100).round %>%</li>
-        <li>Summary: <%= @darksky.summary %></li>
+        <li>Daily High: <div id="high"><%= (@darksky.high).round %></div></li>
+        <li>Daily Low: <div id="low"><%= (@darksky.low).round %></div></li>
+        <li>Chance of Precipitation: <div id="precipitation"><%= (@darksky.precipitation.to_f * 100).round %></div>%</li>
+        <li>Humitiy: <div id="humidity"><%= (@darksky.humidity.to_f * 100).round %></div>%</li>
+        <li>Summary: <div id="summary"><%= @darksky.summary %></div></li>
       </ul>
     </div>
     <div class="suggestion">
