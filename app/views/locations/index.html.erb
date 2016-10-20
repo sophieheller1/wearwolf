@@ -6,24 +6,27 @@
 </div>
 
 
+
 <div class="location-container">
   <div class="callout primary">
     <div class="greeting">
       Hello, <%= current_user.email %>! <br>
       The weather for <div class="current-location"> your current location </div> is:
+      <div class="report">
+        <ul>
+          <li>Daily High: <div id="high"/></li>
+          <li>Daily Low: <div id="low"/></li>
+          <li>Chance of Precipitation: <div id="precipitation"/>%</li>
+          <li>Humitiy: <div id="humidity"/>%</li>
+          <li>Summary: <div id="summary"/></li>
+        </ul>
+      </div>
     </div>
-    <div class="report">
-      <ul>
-        <li>Daily High: <div id="high"><%= (@darksky.high).round %></div></li>
-        <li>Daily Low: <div id="low"><%= (@darksky.low).round %></div></li>
-        <li>Chance of Precipitation: <div id="precipitation"><%= (@darksky.precipitation.to_f * 100).round %></div>%</li>
-        <li>Humitiy: <div id="humidity"><%= (@darksky.humidity.to_f * 100).round %></div>%</li>
-        <li>Summary: <div id="summary"><%= @darksky.summary %></div></li>
-      </ul>
-    </div>
+    <div id="app" />
     <div class="suggestion">
       Based on today's weather report, you should wear: <br>
       <ul>
+
 
       </ul>
     </div>

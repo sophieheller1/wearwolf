@@ -8,9 +8,9 @@ Dotenv.load
 class LocationsController < ApplicationController
 
   def index  # automatically shows current location
-    @ip = request.ip
-    @geolocation = Geolocation.new(@ip)
-    @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
+    # @ip = request.ip
+    # @geolocation = Geolocation.new(@ip)
+    # @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
 
     # @city = 'Boston'
     # binding.pry
