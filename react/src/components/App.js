@@ -30,6 +30,7 @@ class App extends Component {
     this.setState({
       city_name: newLocation.name,
     })
+    let get_location = this.getLocation(event);
   }
 
   handleChange(event) {
@@ -46,9 +47,10 @@ class App extends Component {
       url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + this.state.city_name + "&key="+ google_key,
     })
     .done(data => {
-      app.setState( { lat: data.results[0]['geometry']['location']['lat'],
-                    lng: data.results[0]['geometry']['location']['lng'] })
+      app.setState( { lat: data.results[0].geometry.location.lat,
+                    lng: data.results[0].geometry.location.lng })
     });
+    debugger;
   }
 
   // getWeather(event) {
@@ -65,6 +67,10 @@ class App extends Component {
   //   });
   // }
 
+  componentDidMount() {
+
+  }
+
   render() {
     return (
       <div>
@@ -74,13 +80,13 @@ class App extends Component {
           handleChange={this.handleChange}
           name={this.state.city_name}
           // city={this.state.city_name}
-          // getLocation={this.getLocation}
+          get_location={this.getLocation}
           // getWeather={this.getWeather}
         />
         <Location
           city={this.state.city_name}
-          lat={this.state.lat}
-          lng={this.state.lng}
+          // lat={this.state.lat}
+          // lng={this.state.lng}
         />
       </div>
     );

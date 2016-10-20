@@ -8,19 +8,24 @@ Dotenv.load
 class LocationsController < ApplicationController
 
   def index  # automatically shows current location
+    user = current_user
     # @ip = request.ip
     # @geolocation = Geolocation.new(@ip)  # maybe this is just because it's local, only getting bs ip
     # # @geolocation = Geolocation.new('50.241.127.209')# this actually works, which means the code should be right
     # @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
-    #
-    # # @city = 'Boston'
-    # # binding.pry
-    # # @googlegeocoding = GoogleGeocoding.new(@city)
-    # @darksky = Darksky.new(@googlegeocoding.latitude)
-
 
 
     render :index
+  end
+
+  def show
+    @location = Location.find(params[:id])
+  end
+
+  def create
+    user = current_user
+
+
   end
 
   # def show # navigate to favorite, which is a location previously saved to database
