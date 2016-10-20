@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root"locations#index"
 
-  resources :locations
-
-  resources :conditions
+  resources :locations do
+    resources :conditions
+  end
 
   resources :users
 

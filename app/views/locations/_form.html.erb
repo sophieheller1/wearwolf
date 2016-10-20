@@ -1,0 +1,23 @@
+<div class="add-location-form">
+  <%= form_for(@location) do |f| %>
+    <div class="field city-search">
+      <%= f.label :city, "City" %>
+      <%= f.text_field :city %>
+    </div>
+    <div class="field state-search">
+      <%= f.label :state, "State" %>
+      <%= f.text_field :state %>
+    </div>
+    <div class="field", id="zip-search">
+      <%= f.label :zip, "Zip" %>
+      <%= f.text_field :zip %>
+    </div>
+    <div class="field country-search">
+      <%= f.label :country, "Country" %>
+      <%= f.text_field :country %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Add Location", class: "search-button add-location" %>
+    </div>
+  <% end %>
+</div>

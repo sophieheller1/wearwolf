@@ -1,21 +1,28 @@
 $(document).ready(function() {
-
-  $('.location-search').on('click', function(event){
+  $('.add-location').on('click', function(event){
     event.preventDefault();
-    var city = $('.search-form').val();
+    var zip = $('#zip-search').val();
+    debugger;
     var google_key = $('body').data('env')[0];
 
-
-    var get_location = $.ajax({
+    var get_coordinates = $.ajax({
       method: "get",
-      url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "&key="+ google_key,
+      url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + zip + "&key="+ google_key,
     });
 
-    get_location.done(function(data){
+    get_coordinates.done(function(data){
+      var city = $('.city-search').val();
+      var state = $('.state-search').val();
+      var zip = $('.zip-search').val();
+      var country = $('.country-search').val();
       var lat = data.results[0]['geometry']['location']['lat'];
-      $('.current-location').replaceWith(city);
       var lng = data.results[0]['geometry']['location']['lng'];
-      
+
+      var save_location = $.ajax({
+        method: "post",
+        data: { city: city, state: state, zip: zip, country: country, latitude: lat, longitude: lng },
+        url: '/locations/`$(location)`'
+      })
 
 
       // var get_weather = $.ajax({
