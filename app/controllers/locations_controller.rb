@@ -17,6 +17,9 @@ class LocationsController < ApplicationController
     @geolocation = Geolocation.new(@ip)
     @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
 
+    @locations = Location.where(user_id: @user.id)
+
+
     render :index
   end
 

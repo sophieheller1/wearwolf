@@ -44,6 +44,8 @@ $(document).ready(function() {
           url: '/location/`$(location)`/conditions/create'
         });
 
+        
+
 
     });
   });

@@ -15,5 +15,14 @@
   <h5>It's HOT out there. You should wear a shirt, shorts, and little else.</h5>
 </div>
 
-<h3> Trying to get dressed in a different location? Enter it below.</h3>
+<h3> Trying to get dressed in a different location? Choose from your previous searches or add it below.</h3>
+<div class="user-locations success callout">
+  <ul>
+    <% @locations.each do |location| %>
+      <li><%= location.city %>, <%= location.state %>, <%= location.zip %>, <%= location.country %>  <%= link_to 'Get the Weather', locations_path(location)  %></li>
+    <% end %>
+  </ul>
+</div>
+
+
 <h2><%= link_to 'Add a location', new_location_path, method: :get %></h2>

@@ -108,10 +108,26 @@ body {
   margin: 0 auto;
 }
 
+.user-locations {
+  background: $light-blue;
+  border-radius: 10px;
+  padding: 50px;
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 50%;
+  display: center;
+  margin: 0 auto;
+}
+
+ul {
+  columns: 2;
+  text-align: center;
+  margin: 5px;
+}
 
 .greeting {
   padding: 10px;
-
 }
 
 .callout {
