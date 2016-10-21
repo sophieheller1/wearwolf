@@ -1,9 +1,9 @@
 <div class="location-info callout primary">
   <h1><%= @location.city %>, <%= @location.state %> </h1>
   <h4><%= @location.zip %>, <%= @location.country %></h4>
-  <div class="get-weather"><%= link_to 'Get the Weather'  %></div>
+  <div class="get-weather search-button"><%= link_to 'Get the Weather'  %></div>
 </div>
-<div class="weather-info callout secondary">
+<div class="weather-info success callout">
   <h2>Today's weather conditions are :</h2>
 </div>
 <div id="zip" hidden="true"><%= @location.zip %></div>

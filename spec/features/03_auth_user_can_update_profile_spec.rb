@@ -26,8 +26,7 @@ describe 'Auth user can update profile' do
       fill_in 'Favorite location', with: 'Boston'
       choose 'cold'
       choose 'F'
-
-      render 'locations/users/' + user.id + 'edit'
+      click_button 'Update your profile'
 
       expect(page).to have_content 'Profile updated successfully.'
       expect(page).to have_content 'Boston'

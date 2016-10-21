@@ -25,6 +25,22 @@ class LocationsController < ApplicationController
     @user = current_user
     @location = Location.find(params[:id])
     @condition = Condition.where(location_id: @location.id)
+
+    @weathercombos = Condition::WEATHERCOMBOS
+
+    if @condition.maxtemp >= 80
+      if @condition.humidity >= 50%
+        if @condition.precipitation >= 40%
+          best_fit = @weathercombos[0]
+        elsif @condition.precipitation < 40%
+          best_fit = @weathercombos[2]
+        end
+      elsif @condition.humidity < 50%
+        best_fit = @weathercombos[1]
+      end
+    end
+
+
   end
 
   def new
@@ -52,7 +68,7 @@ class LocationsController < ApplicationController
   private
 
   def location_params
-    params.require(:location).permit(:city, :state, :zip, :country, :latitude, :longtitude)
+    params.require(:location).permit(:user, :city, :state, :zip, :country, :latitude, :longtitude)
   end
 
 
