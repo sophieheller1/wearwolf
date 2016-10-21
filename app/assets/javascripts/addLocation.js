@@ -1,8 +1,9 @@
 $(document).ready(function() {
+  console.log('hi');
   $('.get-weather').on('click', function(event){
     event.preventDefault();
-    var self = $(this),
-      location = self.data('location');
+    // var self = $(this),
+    //   location = self.data('location');
 
     var google_key = $('body').data('env')[0];
     var zip = $('#zip').html();
@@ -34,13 +35,14 @@ $(document).ready(function() {
         var humidity = data.daily.data[0]['humidity'];
         humidity = Math.round((humidity * 100));
         var summary = data.daily.data[0]['summary'];
+        console.log(summary);
 
-        var save_weather = $.ajax({
-          method: "post",
-          data: { location_id: location, maxtemp: high, mintemp: low, precipitation: precipitation,
-                  humidity: humidity, description: summary },
-          url: '/location/`$(location)`/conditions/condition'
-        });
+        // var save_weather = $.ajax({
+        //   method: "post",
+        //   data: { location_id: location, maxtemp: high, mintemp: low, precipitation: precipitation,
+        //           humidity: humidity, description: summary },
+        //   url: '/location/`$(location)`/conditions/condition'
+        // });
 
     });
   });
