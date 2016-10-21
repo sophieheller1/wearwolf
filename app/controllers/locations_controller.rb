@@ -7,10 +7,10 @@ Dotenv.load
 class LocationsController < ApplicationController
 
   def index  # automatically shows current location
-    @ip = request.ip
-    @geolocation = Geolocation.new(@ip)  # maybe this is just because it's local, only getting bs ip
+    # @ip = request.ip
+    # @geolocation = Geolocation.new(@ip)  # maybe this is just because it's local, only getting bs ip
     # @geolocation = Geolocation.new('50.241.127.209')# this actually works, which means the code should be right
-    @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
+    # @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
     render :index
   end
 
