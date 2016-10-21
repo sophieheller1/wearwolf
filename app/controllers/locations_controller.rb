@@ -24,6 +24,7 @@ class LocationsController < ApplicationController
   def show
     @user = current_user
     @location = Location.find(params[:id])
+    @condition = Condition.where(location_id: @location.id)
   end
 
   def new

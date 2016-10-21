@@ -70,8 +70,21 @@ body {
   width: 10%;
 }
 
-.location-container {
+.location-info {
   background: $light-blue;
+  text-align: center;
+  border-radius: 10px;
+  padding: 50px;
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 50%;
+  display: center;
+  margin: 0 auto;
+}
+
+.weather-info {
+  background: $slate;
+  text-align: center;
   border-radius: 10px;
   padding: 50px;
   margin-left: 200px;
@@ -153,6 +166,7 @@ body {
   padding: 10px;
   margin: 10px;
 }
+
 
 // .wolf-suit {
 //   background: url('http://edgardaily.com/media/18180/zoo-portraits-wolf.jpg?anchor=center&mode=crop&width=870&height=488&rnd=130886855540000000') no-repeat;

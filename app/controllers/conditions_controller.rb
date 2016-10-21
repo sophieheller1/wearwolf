@@ -16,7 +16,6 @@ class ConditionsController < ApplicationController
       )
     end
 
-
     respond_to do |format|
       format.json { render :json => @condition }
     end

@@ -1,2 +1,9 @@
-<div class="get-weather"><%= link_to 'Fill in Coordinates'  %></div>
-<div id="zip"><%= @location.zip %></div>
+<div class="location-info callout primary">
+  <h1><%= @location.city %>, <%= @location.state %> </h1>
+  <h4><%= @location.zip %>, <%= @location.country %></h4>
+  <div class="get-weather"><%= link_to 'Get the Weather'  %></div>
+</div>
+<div class="weather-info callout secondary">
+  <h2>Today's weather conditions are :</h2>
+</div>
+<div id="zip" hidden="true"><%= @location.zip %></div>
