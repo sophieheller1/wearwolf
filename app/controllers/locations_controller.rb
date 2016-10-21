@@ -19,14 +19,12 @@ class LocationsController < ApplicationController
 
     @locations = Location.where(user_id: @user.id)
 
-
     render :index
   end
 
   def show
     @user = current_user
     @location = Location.find(params[:id])
-    
 
     @weathercombos = Condition::WEATHERCOMBOS
 
