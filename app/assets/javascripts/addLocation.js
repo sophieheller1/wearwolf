@@ -44,12 +44,7 @@ $(document).ready(function() {
           data: { maxtemp: high, mintemp: low, precipitation: precipitation,
                   humidity: humidity, description: summary }
         });
-
-        save_weather.done(function(data){
-          alert("Hold tight");
-        });
-
+      });
     });
   });
-});
 });
