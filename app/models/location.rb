@@ -1,6 +1,5 @@
 class Location < ActiveRecord::Base
   belongs_to :user
-  has_many :conditions
 
   validates :city, presence: true
   validates :state, presence: true

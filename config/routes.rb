@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   root 'locations#index'
   post 'locations/:id' => 'conditions#create'
 
-  resources :locations do
-    resources :conditions
+  resources :locations
+
+  namespace :api do
+    namespace :v1 do
+      resources :conditions, only: [:create]
+    end
   end
 
   resources :users

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021001825) do
+ActiveRecord::Schema.define(version: 20161021211508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 20161021001825) do
     t.integer "precipitation", null: false
     t.integer "humidity",      null: false
     t.string  "description"
-    t.integer "location_id",   null: false
-    t.index ["location_id"], name: "index_conditions_on_location_id", using: :btree
   end
 
   create_table "garments", force: :cascade do |t|

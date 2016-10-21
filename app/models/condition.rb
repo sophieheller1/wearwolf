@@ -1,5 +1,4 @@
 class Condition < ActiveRecord::Base
-  belongs_to :location
   has_many :suggestions
   has_many :garments, through: :suggestions
 

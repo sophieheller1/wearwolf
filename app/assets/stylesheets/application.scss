@@ -120,6 +120,18 @@ body {
   margin: 0 auto;
 }
 
+.info-form {
+  background: $light-blue;
+  border-radius: 10px;
+  padding: 50px;
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 50%;
+  display: center;
+  margin: 0 auto;
+}
+
 ul {
   columns: 2;
   text-align: center;
@@ -162,19 +174,11 @@ ul {
   padding-top: 30px;
 }
 
-.profile-form {
-  padding: 50px;
-  margin: 0 auto;
-}
-
 .large-6 {
   padding: 30px;
   margin: 20px;
 }
 
-.change-favorite {
-  margin-top: 300px;
-}
 
 .flash-container {
   text-align: center;

@@ -1,13 +1,9 @@
 $(document).ready(function() {
-  console.log('hi');
   $('.get-weather').on('click', function(event){
     event.preventDefault();
-    // var self = $(this),
-    //   location = self.data('location');
 
     var google_key = $('body').data('env')[0];
     var zip = $('#zip').html();
-    console.log(zip);
 
     var get_coordinates = $.ajax({
       method: "get",
@@ -19,7 +15,6 @@ $(document).ready(function() {
       var lat  = data.results[0]['geometry']['location']['lat'];
       var lng = data.results[0]['geometry']['location']['lng'];
       var darksky_key = $('body').data('env')[1];
-      console.log(lat);
 
       var get_weather = $.ajax({
         method: "get",
@@ -35,18 +30,23 @@ $(document).ready(function() {
         var humidity = data.daily.data[0]['humidity'];
         humidity = Math.round((humidity * 100));
         var summary = data.daily.data[0]['summary'];
-        console.log(summary);
+        $('.high').append('High: ' + high);
+        $('.low').append('Low: ' + low);
+        $('.precipitation').append('Precipitation: ' + precipitation + '%');
+        $('.humidity').append('Humidity: ' + humidity + '%');
+        $('.summary').append(summary);
+
 
         var save_weather = $.ajax({
           method: "post",
-          data: { location_id: location, maxtemp: high, mintemp: low, precipitation: precipitation,
-                  humidity: humidity, description: summary },
-          url: '/location/`$(location)`/conditions/create'
+          url: '/api/v1/conditions',
+          data: { maxtemp: high, mintemp: low, precipitation: precipitation,
+                  humidity: humidity, description: summary }
         });
 
-        
-
-
+        save_weather.done(function(data){
+          $('.get-weather').hide();
+        })
     });
   });
 });
