@@ -5,7 +5,5 @@ class Location < ActiveRecord::Base
   validates :state, presence: true
   validates :zip, presence: true, numericality: { only_integer: true }, length: { is: 5 }
   validates :country, presence: true
-  validates :latitude, presence: true
-  validates :longitude, presence: true
 
 end
