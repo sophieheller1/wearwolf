@@ -3,6 +3,8 @@ class UsersController < ApplicationController
     @user = current_user
     @preference_collection = User::PREFERENCE
     @gender_collection = User::GENDER
+    @favorite = @user.favorite
+
   end
 
   def update

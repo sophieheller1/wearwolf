@@ -1,19 +1,17 @@
-<form>
-  <label> Change your favorite location
-    <input type="text" placeholder="Transylvania" aria-describedby="exampleHelpText">
-  </label>
-  <p class="help-text" id="exampleHelpText">Where do you want your wolf?</p>
-  <div class="row">
-    <fieldset class="large-6 columns">
-      <legend>I run?</legend>
-      <input type="radio" name="personalize-temp" value="Cold" id="runCold" required><label for="runCold">Cold</label>
-      <input type="radio" name="personalize-temp" value="Neutral" id="runNeutral"><label for="runNeutral">Neutral</label>
-      <input type="radio" name="personalize-temp" value="Hot" id="runHot"><label for="runHot">Hot</label>
-    </fieldset>
+<%= form_for(@user) do |f| %>
+  <div class="row top-padded">
+    <%= f.label :favorite, "Favorite location" %>
+    <%= f.text_field :favorite, placeholder: 'Transylvania' %>
   </div>
-  <div class="input-group">
-    <span class="input-group-label">$</span>
-    <input class="input-group-field" type="url">
-    <a class="input-group-button button">Submit</a>
+  <div class="row top-padded">
+    <%= f.label :preference, "I run?"%><br>
+    <div class="space-form"><%= f.collection_radio_buttons(:preference, @preference_collection, :first, :last) %></div>
   </div>
-</form>
+  <div class="change-gender top-padded">
+    <%= f.label :gender %>
+    <%= f.collection_radio_buttons(:gender, @gender_collection, :first, :last) %>
+  </div>
+  <div class="actions top-padded">
+    <%= f.submit 'Update your profile' %>
+  </div>
+<% end %>
