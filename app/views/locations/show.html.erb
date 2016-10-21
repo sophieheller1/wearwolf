@@ -1,16 +1,16 @@
-<div class="location-info callout primary">
-  <h1><%= @location.city %>, <%= @location.state %> </h1>
-  <h4><%= @location.zip %>, <%= @location.country %></h4>
-  <div class="get-weather search-button"><%= link_to 'Get the Weather'  %></div>
-</div>
-<br><br><br>
+  <h1><%= @location.city %>, <%= @location.state %>, <%= @location.zip %>, <%= @location.country %> </h1>
+  <div class="get-weather user-buttons"><%= button_to 'Get the Weather', locations_path(@location)  %></div>
+<br><br>
 <div class="weather-info success callout">
   <h2>Today's weather conditions are :</h2>
+  
 </div>
-<br><br><br>
+<br>
 <div class="clothing-suggestions success callout">
   <h2>The wolf says:</h2>
   <h5>It's HOT out there. You should wear a shirt, shorts, and little else.</h5>
 </div>
+<div>
+  <%= link_to 'Return Home', locations_path  %>
 </div>
 <div id="zip" hidden="true"><%= @location.zip %></div>

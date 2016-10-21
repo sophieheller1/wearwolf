@@ -1,17 +1,19 @@
-<h2>Look up the weather in a location</h2>
-<%= link_to 'Add a location', new_location_path, method: :get %>
+<h1> Hello, <%= current_user.email %>! Let's get you outfitted! </h1>
 
-<div class="location-container">
-  <div class="callout primary">
-    <div class="greeting">
-      Hello, <%= current_user.email %>! <br>
-      The weather for your current location is: <br>
-      <span>High: <%= @darksky.high %> Low: <%= @darksky.low %></span>
-      <span>Chance of precipitation: <%= (@darksky.precipitation * 100).round %>
-            Chance of humidity: <%= (@darksky.humidity * 100).round %></span>
-      <span><%= @darksky.summary %></span>
-    </div>
-
-
+<div class="weather-info callout primary">
+  <div class="greeting">
+    <h3>The weather for your current location is: <br></h2>
+    <span>High: <%= @darksky.high %> Low: <%= @darksky.low %></span>
+    <span>Chance of precipitation: <%= (@darksky.precipitation * 100).round %>
+          Chance of humidity: <%= (@darksky.humidity * 100).round %></span>
+    <span><%= @darksky.summary %></span>
   </div>
 </div>
+<br>
+<div class="clothing-suggestions success callout">
+  <h2>The wolf says:</h2>
+  <h5>It's HOT out there. You should wear a shirt, shorts, and little else.</h5>
+</div>
+
+<h3> Trying to get dressed in a different location? Enter it below.</h3>
+<h2><%= link_to 'Add a location', new_location_path, method: :get %></h2>
