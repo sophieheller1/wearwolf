@@ -41,12 +41,9 @@ $(document).ready(function() {
           method: "post",
           data: { location_id: location, maxtemp: high, mintemp: low, precipitation: precipitation,
                   humidity: humidity, description: summary },
-          url: '/location/`$(location)`/conditions/condition'
+          url: '/location/`$(location)`/conditions/create'
         });
 
-        save_weather.done(function(data){
-          alert('Condition saved');
-        });
 
     });
   });

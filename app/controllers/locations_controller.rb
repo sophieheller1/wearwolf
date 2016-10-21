@@ -16,7 +16,6 @@ class LocationsController < ApplicationController
     @ip = request.ip
     @geolocation = Geolocation.new(@ip)
     @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
-    binding.pry
 
     render :index
   end
@@ -28,17 +27,17 @@ class LocationsController < ApplicationController
 
     @weathercombos = Condition::WEATHERCOMBOS
 
-    if @condition.maxtemp >= 80
-      if @condition.humidity >= 50%
-        if @condition.precipitation >= 40%
-          best_fit = @weathercombos[0]
-        elsif @condition.precipitation < 40%
-          best_fit = @weathercombos[2]
-        end
-      elsif @condition.humidity < 50%
-        best_fit = @weathercombos[1]
-      end
-    end
+    # if @condition.maxtemp >= 80
+    #   if @condition.humidity >= 50%
+    #     if @condition.precipitation >= 40%
+    #       best_fit = @weathercombos[0]
+    #     elsif @condition.precipitation < 40%
+    #       best_fit = @weathercombos[2]
+    #     end
+    #   elsif @condition.humidity < 50%
+    #     best_fit = @weathercombos[1]
+    #   end
+    # end
 
 
   end

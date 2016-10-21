@@ -17,8 +17,11 @@ class ConditionsController < ApplicationController
     end
 
     respond_to do |format|
-      format.json { render :json => @condition }
+      if @condition.save
+        format.json { render :json => @condition }
+      else
+        format.json { render :json => @condition.errors }
+      end
     end
-
   end
 end
