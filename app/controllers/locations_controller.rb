@@ -1,6 +1,6 @@
 require './config/initializers/geolocation'
 require './config/initializers/darksky'
-require './config/initializers/google_geocoding'
+require 'pry'
 
 require 'dotenv-rails'
 Dotenv.load
@@ -13,10 +13,10 @@ class LocationsController < ApplicationController
     else
       redirect_to new_user_session_path
     end
-    # @ip = request.ip
-    # @geolocation = Geolocation.new(@ip)  # maybe this is just because it's local, only getting bs ip
-    # # @geolocation = Geolocation.new('50.241.127.209')# this actually works, which means the code should be right
-    # @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
+    @ip = request.ip
+    @geolocation = Geolocation.new(@ip)
+    @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
+    binding.pry
 
     render :index
   end

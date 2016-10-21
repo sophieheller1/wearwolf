@@ -5,9 +5,13 @@
   <div class="callout primary">
     <div class="greeting">
       Hello, <%= current_user.email %>! <br>
-      The weather for <div class="current-location"> your current location </div> is:
+      The weather for your current location is: <br>
+      <span>High: <%= @darksky.high %> Low: <%= @darksky.low %></span>
+      <span>Chance of precipitation: <%= (@darksky.precipitation * 100).round %>
+            Chance of humidity: <%= (@darksky.humidity * 100).round %></span>
+      <span><%= @darksky.summary %></span>
     </div>
-    
+
 
   </div>
 </div>
