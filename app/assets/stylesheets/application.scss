@@ -17,6 +17,7 @@ body {
   padding-bottom: 70px;
   border-radius: 10px;
   text-align: center;
+  margin: 0 auto;
 }
 
 .loginnav {
@@ -69,23 +70,81 @@ body {
   width: 10%;
 }
 
-.location-container {
+.location-info {
   background: $light-blue;
+  text-align: center;
   border-radius: 10px;
   padding: 50px;
   margin-left: 200px;
   margin-right: 200px;
   width: 50%;
+  display: center;
+  margin: 0 auto;
+}
+
+.weather-info {
+  background: $light-blue;
+  text-align: center;
+  border-radius: 10px;
+  padding: 50px;
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 50%;
+  display: center;
+  margin: 0 auto;
+}
+
+.clothing-suggestions {
+  background: $light-blue;
+  text-align: center;
+  border-radius: 10px;
+  padding: 50px;
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 50%;
+  display: center;
+  margin: 0 auto;
+}
+
+.user-locations {
+  background: $light-blue;
+  border-radius: 10px;
+  padding: 50px;
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 50%;
+  display: center;
+  margin: 0 auto;
+}
+
+.info-form {
+  background: $light-blue;
+  border-radius: 10px;
+  padding: 50px;
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 50%;
+  display: center;
+  margin: 0 auto;
+}
+
+ul {
+  columns: 2;
+  text-align: center;
+  margin: 5px;
 }
 
 .greeting {
   padding: 10px;
-  margin: 10px;
 }
 
-// .callout {
-//   padding: 10px;
-// }
+.callout {
+  padding: 10px;
+}
 
 .user-buttons {
   display: inline-block;
@@ -107,13 +166,42 @@ body {
 .back-link {
   text-align: center;
   color: $coral;
-  font-size: 20px;
+  font-size: 15px;
   font-family: 'Merienda', sans-serif;
 }
 
 .top-padded {
   padding-top: 30px;
 }
+
+.large-6 {
+  padding: 30px;
+  margin: 20px;
+}
+
+
+.flash-container {
+  text-align: center;
+  background: $coral;
+  font-family: 'Hind', sans-serif;
+  font-size: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.space-form {
+  padding: 10px;
+}
+
+.report {
+  text-align: left;
+}
+
+.search-bar{
+  padding: 10px;
+  margin: 10px;
+}
+
 
 // .wolf-suit {
 //   background: url('http://edgardaily.com/media/18180/zoo-portraits-wolf.jpg?anchor=center&mode=crop&width=870&height=488&rnd=130886855540000000') no-repeat;

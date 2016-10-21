@@ -1,7 +1,31 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+weather_ranges = Condition.create([maxtemp: 100 , mintemp: 80 , precipitation: , humidity: ],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],
+                                  [maxtemp: , mintemp:  , precipitation: , humidity:],)
+
+clothing_pieces = Garment.create([name: 'shirt'],
+                                [name: 'pants'],
+                                [name: 'dress', is_female: true],
+                                [name: 'sweater'],
+                                [name: 'scarf'],
+                                [name: 'socks'],
+                                [name: 'skirt'],
+                                [name: ],
+                                [name: ],
+                                [name: ],
+                                [name: ],
+                                [name: ],
+                                [name: ],
+                                [name: ],
+                                )

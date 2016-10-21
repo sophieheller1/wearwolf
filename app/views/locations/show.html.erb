@@ -1,0 +1,19 @@
+  <h1><%= @location.city %>, <%= @location.state %>, <%= @location.zip %>, <%= @location.country %> </h1>
+  <div class="get-weather user-buttons"><%= button_to 'Get the Weather', locations_path(@location)  %></div>
+<br><br>
+<div class="weather-info success callout">
+  <h2>Today's weather conditions are :</h2>
+  <div class="high"></div> <div class="low"></div>
+  <div class="precipitation"></div> <div class="humidity"></div>
+  <div class="summary"></div>
+</div>
+<br>
+<div class="clothing-suggestions success callout">
+  <h2>The wolf says:</h2>
+
+  <h5>It's HOT out there. You should wear a shirt, shorts, and little else.</h5>
+</div>
+<div>
+  <%= link_to 'Return Home', locations_path  %>
+</div>
+<div id="zip" hidden="true"><%= @location.zip %></div>
