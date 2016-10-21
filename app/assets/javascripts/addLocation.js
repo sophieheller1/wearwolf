@@ -15,6 +15,7 @@ $(document).ready(function() {
       var lat  = data.results[0]['geometry']['location']['lat'];
       var lng = data.results[0]['geometry']['location']['lng'];
       var darksky_key = $('body').data('env')[1];
+      $('.get-weather').hide();
 
       var get_weather = $.ajax({
         method: "get",
@@ -45,8 +46,9 @@ $(document).ready(function() {
         });
 
         save_weather.done(function(data){
-          $('.get-weather').hide();
-        })
+          alert("Hold tight");
+        });
+
     });
   });
 });
