@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'spec_helper'
+require 'factory_girl_rails'
 
 describe 'User can' do
   let!(:user_1) { FactoryGirl.create(:user) }
@@ -10,7 +11,7 @@ describe 'User can' do
       fill_in 'Email', with: user_1.email
       fill_in 'Password', with: user_1.password
       click_button 'Log in'
-      visit new_location_path
+      click_link 'Add a New Location'
       expect(page).to have_content 'Add a New Location'
 
       fill_in 'City', with: 'Somerville'
@@ -28,7 +29,8 @@ describe 'User can' do
       fill_in 'Email', with: user_1.email
       fill_in 'Password', with: user_1.password
       click_button 'Log in'
-      visit new_location_path
+      click_link 'Add a New Location'
+
       click_button 'Add Location'
       expect(page).to have_content 'City can\'t be blank'
       expect(page).to have_content 'State can\'t be blank'

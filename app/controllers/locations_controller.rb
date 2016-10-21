@@ -59,8 +59,8 @@ class LocationsController < ApplicationController
     @location.user = current_user
 
     if @location.save
+      redirect_to locations_path
       flash[:notice] = "Location created."
-      redirect_to location_path(@location)
     else
       flash[:notice] = @location.errors.full_messages.join(', ')
       render :new

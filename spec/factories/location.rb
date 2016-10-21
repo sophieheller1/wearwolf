@@ -1,4 +1,4 @@
-require 'facotry_girl_rails'
+require 'factory_girl_rails'
 
 FactoryGirl.define do
   factory :location do

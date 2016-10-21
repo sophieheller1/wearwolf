@@ -3,9 +3,9 @@
 <div class="weather-info callout primary">
   <div class="greeting">
     <h3>The weather for your current location is: <br></h2>
-    <span>High: <%= @darksky.high %> Low: <%= @darksky.low %></span>
-    <span>Chance of precipitation: <%= (@darksky.precipitation * 100).round %>
-          Chance of humidity: <%= (@darksky.humidity * 100).round %></span>
+    <span>High: <%= @darksky.high %> Low: <%= @darksky.low %></span><br>
+    <span>Chance of precipitation: <%= (@darksky.precipitation * 100).round %>%
+          Chance of humidity: <%= (@darksky.humidity * 100).round %>%</span><br>
     <span><%= @darksky.summary %></span>
   </div>
 </div>
@@ -15,8 +15,9 @@
   <h5>It's HOT out there. You should wear a shirt, shorts, and little else.</h5>
 </div>
 
-<h3> Trying to get dressed in a different location? Choose from your previous searches or add it below.</h3>
+<h2> Trying to get dressed in a different location?</h2>
 <div class="user-locations success callout">
+  <h3>Choose from Your Locations: </h3>
   <ul>
     <% @locations.each do |location| %>
       <li><%= location.city %>, <%= location.state %>, <%= location.zip %>, <%= location.country %>  <%= link_to 'Get the Weather', locations_path(location)  %></li>
@@ -25,4 +26,4 @@
 </div>
 
 
-<h2><%= link_to 'Add a location', new_location_path, method: :get %></h2>
+<h2><%= link_to 'Add a New Location', new_location_path, method: :get %></h2>
