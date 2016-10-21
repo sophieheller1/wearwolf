@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root"locations#index"
+  root 'locations#index'
+  post 'locations/:id' => 'conditions#create'
 
   resources :locations do
     resources :conditions

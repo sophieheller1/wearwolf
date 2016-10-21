@@ -37,12 +37,16 @@ $(document).ready(function() {
         var summary = data.daily.data[0]['summary'];
         console.log(summary);
 
-        // var save_weather = $.ajax({
-        //   method: "post",
-        //   data: { location_id: location, maxtemp: high, mintemp: low, precipitation: precipitation,
-        //           humidity: humidity, description: summary },
-        //   url: '/location/`$(location)`/conditions/condition'
-        // });
+        var save_weather = $.ajax({
+          method: "post",
+          data: { location_id: location, maxtemp: high, mintemp: low, precipitation: precipitation,
+                  humidity: humidity, description: summary },
+          url: '/location/`$(location)`/conditions/condition'
+        });
+
+        save_weather.done(function(data){
+          alert('Condition saved');
+        });
 
     });
   });
