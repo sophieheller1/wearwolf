@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('.clothing-suggestions').hide();
   $('.get-weather').on('click', function(event){
     event.preventDefault();
 
@@ -43,6 +44,9 @@ $(document).ready(function() {
           url: '/api/v1/conditions',
           data: { maxtemp: high, mintemp: low, precipitation: precipitation,
                   humidity: humidity, description: summary }
+        });
+        save_weather.done(function(data){
+          $('.clothing-suggestions').show();
         });
       });
     });

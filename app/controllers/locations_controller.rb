@@ -2,11 +2,11 @@ require './config/initializers/geolocation'
 require './config/initializers/darksky'
 require 'pry'
 
-
 require 'dotenv-rails'
 Dotenv.load
 
 class LocationsController < ApplicationController
+  include WolfAdvice
 
   def index  # automatically shows current location
 
@@ -30,6 +30,9 @@ class LocationsController < ApplicationController
 
     user_conditions = Condition.where(user_id: @user.id)
     @current_condition = user_conditions.order('created_at').last
+
+    
+    @wolf_advice = get_wolf_advice
 
     @weathercombos = Condition::WEATHERCOMBOS
 
