@@ -4,25 +4,12 @@
 ![Code Climate](https://codeclimate.com/github/sophieheller1/wearwolf.png)
 ![Coverage Status](https://coveralls.io/repos/sophieheller1/wearwolf/badge.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+git clone https://github.com/sophieheller1/wearwolf.git
 
-Things you may want to cover:
+cd wearwolf
 
-* Ruby version
+bundle install
 
-* System dependencies
+rake db:create db:migrate
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+reference .env.example for necessary environment variables
