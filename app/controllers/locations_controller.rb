@@ -32,7 +32,7 @@ class LocationsController < ApplicationController
     @current_condition = user_conditions.order('created_at').last
 
 
-    @wolf_advice = get_wolf_advice
+    @wolf_advice = display_wolf_advice
 
     @weathercombos = Condition::WEATHERCOMBOS
 
