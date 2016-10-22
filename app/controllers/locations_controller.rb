@@ -30,6 +30,7 @@ class LocationsController < ApplicationController
 
     user_conditions = Condition.where(user_id: @user.id)
     @current_condition = user_conditions.order('created_at').last
+    binding.pry
 
 
     @wolf_advice = display_wolf_advice

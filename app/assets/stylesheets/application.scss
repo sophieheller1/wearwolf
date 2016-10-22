@@ -5,11 +5,15 @@ $slate: #E9F2F9;
 $bright-blue: #3A89C9;
 $coral: #F26C4F;
 
-
 body {
   background: $slate;
   margin: 0;
 }
+
+a {
+  color: $navy;
+}
+
 
 .main-page {
   margin-left: 50px;
