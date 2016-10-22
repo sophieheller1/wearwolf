@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022142625) do
+ActiveRecord::Schema.define(version: 20161022154607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,6 @@ ActiveRecord::Schema.define(version: 20161022142625) do
     t.index ["user_id"], name: "index_conditions_on_user_id", using: :btree
   end
 
-  create_table "garments", force: :cascade do |t|
-    t.string  "name",      null: false
-    t.boolean "is_male"
-    t.boolean "is_female"
-  end
-
   create_table "locations", force: :cascade do |t|
     t.string   "city",       null: false
     t.string   "state",      null: false
@@ -44,13 +38,6 @@ ActiveRecord::Schema.define(version: 20161022142625) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_locations_on_user_id", using: :btree
-  end
-
-  create_table "suggestions", force: :cascade do |t|
-    t.integer "garment_id"
-    t.integer "condition_id"
-    t.index ["condition_id"], name: "index_suggestions_on_condition_id", using: :btree
-    t.index ["garment_id"], name: "index_suggestions_on_garment_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
