@@ -2,6 +2,7 @@ class Api::V1::ConditionsController < ActionController::Base
 
   def create
     @condition = Condition.new(condition_params)
+    @condition.user = current_user
     @condition.save
   end
 
