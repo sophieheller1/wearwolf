@@ -27,27 +27,13 @@ class LocationsController < ApplicationController
   def show
     @user = current_user
     @location = Location.find(params[:id])
+    location_zip = @location.zip
 
-    user_conditions = Condition.where(user_id: @user.id)
-    @current_condition = user_conditions.order('created_at').last
-    binding.pry
+    location_conditions = Condition.where(user_id: @user.id)
+    @current_condition = location_conditions.order('created_at').last
 
 
     @wolf_advice = display_wolf_advice
-
-    @weathercombos = Condition::WEATHERCOMBOS
-
-    # if @condition.maxtemp >= 80
-    #   if @condition.humidity >= 50%
-    #     if @condition.precipitation >= 40%
-    #       best_fit = @weathercombos[0]
-    #     elsif @condition.precipitation < 40%
-    #       best_fit = @weathercombos[2]
-    #     end
-    #   elsif @condition.humidity < 50%
-    #     best_fit = @weathercombos[1]
-    #   end
-    # end
 
 
   end

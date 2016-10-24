@@ -1,5 +1,6 @@
 class Condition < ActiveRecord::Base
   belongs_to :user
+  belongs_to :location
 
   validates :maxtemp, presence: true
   validates :mintemp, presence: true

@@ -9,6 +9,6 @@ class Api::V1::ConditionsController < ActionController::Base
   private
 
   def condition_params
-    params.permit(:maxtemp, :mintemp, :precipitation, :humidity, :description)
+    params.permit(:maxtemp, :mintemp, :precipitation, :humidity, :description, :zip)
   end
 end

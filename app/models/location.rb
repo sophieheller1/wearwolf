@@ -1,7 +1,8 @@
 class Location < ActiveRecord::Base
   include WolfAdvice
-  
+
   belongs_to :user
+  has_many :conditions
 
   validates :city, presence: true
   validates :state, presence: true

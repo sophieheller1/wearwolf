@@ -32,6 +32,7 @@ $(document).ready(function() {
         var humidity = data.daily.data[0]['humidity'];
         humidity = Math.round((humidity * 100));
         var summary = data.daily.data[0]['summary'];
+        var zip = $('#zip').html();
         $('.high').append('High: ' + high);
         $('.low').append('Low: ' + low);
         $('.precipitation').append('Precipitation: ' + precipitation + '%');
@@ -43,7 +44,7 @@ $(document).ready(function() {
           method: "post",
           url: '/api/v1/conditions',
           data: { maxtemp: high, mintemp: low, precipitation: precipitation,
-                  humidity: humidity, description: summary }
+                  humidity: humidity, description: summary, zip: zip }
         });
         save_weather.done(function(data){
           $('.clothing-suggestions').show();
