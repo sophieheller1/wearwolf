@@ -11,7 +11,6 @@ $(document).ready(function() {
       url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + zip + "&key="+ google_key,
     });
 
-
     get_coordinates.done(function(data){
       var lat  = data.results[0]['geometry']['location']['lat'];
       var lng = data.results[0]['geometry']['location']['lng'];
@@ -39,7 +38,6 @@ $(document).ready(function() {
         $('.humidity').append('Humidity: ' + humidity + '%');
         $('.summary').append(summary);
 
-
         var save_weather = $.ajax({
           method: "post",
           url: '/api/v1/conditions',
@@ -47,8 +45,6 @@ $(document).ready(function() {
                   humidity: humidity, description: summary, zip: zip }
         });
         save_weather.done(function(data){
-          console.log("hi");
-          console.log(data.wolfAdvice);
           $('.clothing-suggestions').show();
           $('.clothing-suggestions').append(data.wolfAdvice);
         });

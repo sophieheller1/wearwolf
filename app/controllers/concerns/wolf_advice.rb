@@ -18,9 +18,9 @@ module WolfAdvice
       wolf_advice += "It's a warm day in the neighborhood. You should wear a T-shirt and shorts.
                       Bring a light jacket or sweater since it will be cool in the shade.
                       Try sandals or light sneakers on your feet."
-    elsif between_40_and_60?
-
-
+    # elsif between_40_and_60?
+    #   wolf_advice +=
+    #
     end
     wolf_advice
   end
@@ -47,11 +47,7 @@ module WolfAdvice
   end
 
   def really_hot?
-    @current_condition.maxtemp >= 80
-  end
-
-  def really_cold?
-    @current_condition.maxtemp <= 30
+    @current_condition.maxtemp >= 80 && current_condition.mintemp >= 65
   end
 
   def between_60_and_80?
@@ -59,14 +55,22 @@ module WolfAdvice
   end
 
   def between_40_and_60?
-    @current_condition.maxtemp >= 60 && @current_condition.maxtemp < 80
+    @current_condition.maxtemp >= 40 && @current_condition.maxtemp < 60
   end
 
-  def you_run_cold?
-
+  def between_20_and_40?
+    @current_condition.maxtemp > 20 && @current_condition.maxtemp < 40
   end
 
-  def you_run_hot?
-
+  def really_cold?
+    @current_condition.maxtemp <= 20
   end
+
+  # def you_run_cold?
+  #
+  # end
+
+  # def you_run_hot?
+  #
+  # end
 end
