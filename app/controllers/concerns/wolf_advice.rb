@@ -20,7 +20,7 @@ module WolfAdvice
                     under a winter coat. Insulating boots are a must.
                     Add a scarf, gloves, and hat for optimal comfort."
     elsif between_65_and_80?
-      wolf_advice += "It's a warm day in the neighborhood. You should wear a T-shirt and shorts.
+      wolf_advice += "You should wear a T-shirt and shorts.
                       Bring a light jacket or sweater since it will be cool in the shade.
                       Try sandals or light sneakers on your feet."
     # elsif between_40_and_65?

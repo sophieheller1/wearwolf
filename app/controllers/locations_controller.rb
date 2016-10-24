@@ -18,6 +18,8 @@ class LocationsController < ApplicationController
     @ip = request.ip
     @geolocation = Geolocation.new(@ip)
     @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
+    @current_condition = @darksky
+    @wolf_advice = display_wolf_advice
 
 
     @locations = Location.where(user_id: @user.id)
@@ -28,7 +30,6 @@ class LocationsController < ApplicationController
   def show
     @user = current_user
     @location = Location.find(params[:id])
-    # @wolf_advice = display_wolf_advice
   end
 
   def new
