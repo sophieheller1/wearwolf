@@ -2,7 +2,7 @@ module WolfAdvice
   extend ActiveSupport::Concern
 
   def display_wolf_advice
-    wolf_says = get_weather_commentary + get_wolf_advice
+    wolf_says = get_weather_commentary + get_wolf_advice + account_for_preference
   end
 
   def get_wolf_advice
@@ -23,11 +23,11 @@ module WolfAdvice
       wolf_advice += "You should wear a T-shirt and shorts.
                       Bring a light jacket or sweater since it will be cool in the shade.
                       Try sandals or light sneakers on your feet."
-    # elsif between_40_and_65?
-    #   wolf_advice +=
-    #
+    elsif between_40_and_65?
+      wolf_advice += "It's starting to get a bit colder out there. You should wear a T-shirt and jeans,
+                      with a sweater on top. Add a mid-weight jacket or down vest for extra insulation.
+                      It's definitely a good idea to wear boots to keep your feet warm."
     end
-    wolf_advice
   end
 
   def get_weather_commentary
@@ -40,6 +40,15 @@ module WolfAdvice
       weather_commentary += "It may be raining, but at least it's not too humid. "
     else
       weather_commentary += "It's not likely to rain and quite dry: an ideal day. "
+    end
+  end
+
+  def account_for_preference
+    preference_add_on = ""
+    if you_run_cold?
+      preference_add_on += "Since you run cold, the wolf thinks you should bring an extra layer."
+    elsif you_run_cold?
+      preference_add_on =+ "Since you run hot, the wolf advises you to leave that extra layer at home."
     end
   end
 
@@ -75,11 +84,11 @@ module WolfAdvice
     @current_condition.maxtemp <= 20
   end
 
-  # def you_run_cold?
-  #
-  # end
+  def you_run_cold?
+    current_user.preference == 'cold'
+  end
 
-  # def you_run_hot?
-  #
-  # end
+  def you_run_hot?
+    current_user.preference == 'hot'
+  end
 end
