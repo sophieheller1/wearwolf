@@ -17,7 +17,6 @@ gem 'foundation-rails'
 gem 'listen'
 gem 'json'
 gem 'httpclient'
-gem 'typhoeus'
 
 
 group :development, :test do
@@ -28,7 +27,6 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
   gem 'launchy'
-  gem 'vcr'
 end
 
 group :test do
