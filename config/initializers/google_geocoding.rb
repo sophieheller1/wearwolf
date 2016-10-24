@@ -13,9 +13,9 @@ class GoogleGeocoding
     @data['results']['address_components']['geometry']['location']['lat']
   end
 
-  # def longitude
-  #
-  # end
+  def longitude
+    @data['results']['address_components']['geometry']['location']['lng']
+  end
 
   private
 

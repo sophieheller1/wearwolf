@@ -7,18 +7,23 @@ module WolfAdvice
 
   def get_wolf_advice
     wolf_advice = ""
-    if really_hot?
+    if really_hot_all_day?
       wolf_advice += "It's scorching! You should wear a T-shirt, shorts, and little else.
                     Try sandals or light sneakers on your feet."
+    elsif really_hot_but_will_get_cold?
+      wolf_advice += "It's scorching right now, but the temperature will descend significantly.
+                      For now, you should wear a T-shirt, shorts and sandals/light sneakers.
+                      The wolf thinks it would be prudent to pack a light jacket and a change
+                      of pants for when the mercury drops."
     elsif really_cold?
       wolf_advice += "It's time to bundle up! You should wear a sweater and pants
                     under a winter coat. Insulating boots are a must.
                     Add a scarf, gloves, and hat for optimal comfort."
-    elsif between_60_and_80?
+    elsif between_65_and_80?
       wolf_advice += "It's a warm day in the neighborhood. You should wear a T-shirt and shorts.
                       Bring a light jacket or sweater since it will be cool in the shade.
                       Try sandals or light sneakers on your feet."
-    # elsif between_40_and_60?
+    # elsif between_40_and_65?
     #   wolf_advice +=
     #
     end
@@ -46,15 +51,19 @@ module WolfAdvice
     @current_condition.humidity >= 50
   end
 
-  def really_hot?
+  def really_hot_all_day?
     @current_condition.maxtemp >= 80 && current_condition.mintemp >= 65
   end
 
-  def between_60_and_80?
-    @current_condition.maxtemp >= 60 && @current_condition.maxtemp < 80
+  def really_hot_but_will_get_cold?
+    @current_condition.maxtemp >= 80 && current_condition.mintemp < 65
   end
 
-  def between_40_and_60?
+  def between_65_and_80?
+    @current_condition.maxtemp >= 65 && @current_condition.maxtemp < 80
+  end
+
+  def between_40_and_65?
     @current_condition.maxtemp >= 40 && @current_condition.maxtemp < 60
   end
 

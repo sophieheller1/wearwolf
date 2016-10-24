@@ -25,13 +25,14 @@ $(document).ready(function() {
 
       get_weather.done(function(data){
         var high = data.daily.data[0]['temperatureMax'];
+        high = Math.round(high);
         var low = data.daily.data[0]['temperatureMin'];
+        low = Math.round(low);
         var precipitation = data.daily.data[0]['precipProbability'];
         precipitation = Math.round((precipitation * 100));
         var humidity = data.daily.data[0]['humidity'];
         humidity = Math.round((humidity * 100));
         var summary = data.daily.data[0]['summary'];
-        var zip = $('#zip').html();
         $('.high').append('High: ' + high);
         $('.low').append('Low: ' + low);
         $('.precipitation').append('Precipitation: ' + precipitation + '%');
@@ -42,7 +43,7 @@ $(document).ready(function() {
           method: "post",
           url: '/api/v1/conditions',
           data: { maxtemp: high, mintemp: low, precipitation: precipitation,
-                  humidity: humidity, description: summary, zip: zip }
+                  humidity: humidity, description: summary }
         });
         save_weather.done(function(data){
           $('.clothing-suggestions').show();

@@ -8,17 +8,17 @@ Dotenv.load
 class LocationsController < ApplicationController
   include WolfAdvice
 
-  def index  # automatically shows current location
-
+  def index
     if user_signed_in?
       @user = current_user
     else
       redirect_to new_user_session_path
     end
+
     @ip = request.ip
     @geolocation = Geolocation.new(@ip)
     @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
-    @wolf_advice = display_wolf_advice
+
 
     @locations = Location.where(user_id: @user.id)
 
@@ -28,15 +28,7 @@ class LocationsController < ApplicationController
   def show
     @user = current_user
     @location = Location.find(params[:id])
-    location_zip = @location.zip
-
-    # location_conditions = Condition.where(user_id: @user.id)
-    # @current_condition = location_conditions.order('created_at').last
-    #
-    #
     # @wolf_advice = display_wolf_advice
-
-
   end
 
   def new
@@ -64,10 +56,6 @@ class LocationsController < ApplicationController
   private
 
   def location_params
-    binding.pry
     params.require(:location).permit(:user, :city, :state, :zip, :country, :latitude, :longtitude)
   end
-
-
-
 end

@@ -7,7 +7,6 @@ class Geolocation
   def initialize(ip)
     @ip = ip
     @data = get_location
-    # @data = default_location if city.empty?
   end
 
   def city
