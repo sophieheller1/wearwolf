@@ -1,10 +1,11 @@
 require 'rails_helper'
 require 'net/http'
+require 'vcr'
 
 require 'dotenv-rails'
 Dotenv.load
 
-describe GoogleGeocoding do
+describe GoogleGeocoding, :vcr do
   it "returns the latitude and longitude of an entered zip" do
     VCR.use_cassette("google_geocoding") do
       uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=02143&key=#{ENV['GOOGLE_MAPS_GEOCODING_API_KEY']}")
