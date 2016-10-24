@@ -14,6 +14,13 @@ module WolfAdvice
       wolf_advice += "It's time to bundle up! You should wear a sweater and pants
                     under a winter coat. Insulating boots are a must.
                     Add a scarf, gloves, and hat for optimal comfort."
+    elsif between_60_and_80?
+      wolf_advice += "It's a warm day in the neighborhood. You should wear a T-shirt and shorts.
+                      Bring a light jacket or sweater since it will be cool in the shade.
+                      Try sandals or light sneakers on your feet."
+    elsif between_40_and_60?
+
+
     end
     wolf_advice
   end
@@ -31,6 +38,14 @@ module WolfAdvice
     end
   end
 
+  def is_rainy?
+    @current_condition.precipitation >= 40
+  end
+
+  def is_humid?
+    @current_condition.humidity >= 50
+  end
+
   def really_hot?
     @current_condition.maxtemp >= 80
   end
@@ -39,11 +54,19 @@ module WolfAdvice
     @current_condition.maxtemp <= 30
   end
 
-  def is_rainy?
-    @current_condition.precipitation >= 40
+  def between_60_and_80?
+    @current_condition.maxtemp >= 60 && @current_condition.maxtemp < 80
   end
 
-  def is_humid?
-    @current_condition.humidity >= 50
+  def between_40_and_60?
+    @current_condition.maxtemp >= 60 && @current_condition.maxtemp < 80
+  end
+
+  def you_run_cold?
+
+  end
+
+  def you_run_hot?
+
   end
 end

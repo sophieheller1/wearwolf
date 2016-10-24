@@ -18,6 +18,7 @@ class LocationsController < ApplicationController
     @ip = request.ip
     @geolocation = Geolocation.new(@ip)
     @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
+    @wolf_advice = display_wolf_advice
 
     @locations = Location.where(user_id: @user.id)
 
@@ -29,11 +30,11 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
     location_zip = @location.zip
 
-    location_conditions = Condition.where(user_id: @user.id)
-    @current_condition = location_conditions.order('created_at').last
-
-
-    @wolf_advice = display_wolf_advice
+    # location_conditions = Condition.where(user_id: @user.id)
+    # @current_condition = location_conditions.order('created_at').last
+    #
+    #
+    # @wolf_advice = display_wolf_advice
 
 
   end
@@ -63,6 +64,7 @@ class LocationsController < ApplicationController
   private
 
   def location_params
+    binding.pry
     params.require(:location).permit(:user, :city, :state, :zip, :country, :latitude, :longtitude)
   end
 
