@@ -3,6 +3,7 @@ $(document).ready(function() {
   $('.get-weather').on('click', function(event){
     event.preventDefault();
 
+    var google_key = $('body').data('env')[0];
     var zip = $('#zip').html();
 
     var get_coordinates = $.ajax({
