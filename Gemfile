@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.3.1"
 
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails', :groups => [:development, :test, :production]
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -17,6 +17,7 @@ gem 'foundation-rails'
 gem 'listen'
 gem 'json'
 gem 'httpclient'
+gem 'typhoeus'
 
 
 group :development, :test do
@@ -27,6 +28,7 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
   gem 'launchy'
+  gem 'vcr'
 end
 
 group :test do
