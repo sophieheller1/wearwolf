@@ -6,5 +6,6 @@ FactoryGirl.define do
     state "Rohan"
     zip "01234"
     country "Middle Earth"
+    sequence(:user) { |n| } 
   end
 end

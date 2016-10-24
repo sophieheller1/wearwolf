@@ -13,7 +13,8 @@ describe Location, type: :model do
 
   describe '.city' do
     it 'returns the city of the location' do
-      location = FactoryGirl.create(:location, city: "Cresskill")
+      user = FactoryGirl.create(:user)
+      location = FactoryGirl.create(:location, city: "Cresskill", user: user)
       city = location.city
 
       expect(city).to eq("Cresskill")
@@ -22,7 +23,8 @@ describe Location, type: :model do
 
   describe '.state' do
     it 'returns the state of the location' do
-      location = FactoryGirl.create(:location, state: "Mordor")
+      user = FactoryGirl.create(:user)
+      location = FactoryGirl.create(:location, state: "Mordor", user: user)
       state = location.state
 
       expect(state).to eq("Mordor")
@@ -31,7 +33,8 @@ describe Location, type: :model do
 
   describe '.zip' do
     it 'returns the zip of the location' do
-      location = FactoryGirl.create(:location, zip: "01234")
+      user = FactoryGirl.create(:user)
+      location = FactoryGirl.create(:location, zip: "01234", user: user)
       zip = location.zip
 
       expect(zip).to eq("01234")
@@ -40,7 +43,8 @@ describe Location, type: :model do
 
   describe '.country' do
     it 'returns the country of the location' do
-      location = FactoryGirl.create(:location, country: "Valor")
+      user = FactoryGirl.create(:user)
+      location = FactoryGirl.create(:location, country: "Valor", user: user)
       country = location.country
 
       expect(country).to eq("Valor")
