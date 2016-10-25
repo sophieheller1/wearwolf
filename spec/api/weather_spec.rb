@@ -14,3 +14,4 @@
 #     expect(page).to have_content("Humidity")
 #   end
 # end
+    
