@@ -16,7 +16,7 @@ module WolfAdvice
                       The wolf thinks it would be prudent to pack a light jacket and a change
                       of pants for when the mercury drops."
     elsif really_cold?
-      wolf_advice += " It's time to bundle up! You should wear a sweater and pants
+      wolf_advice += " Wow, it's time to bundle up! You should wear a sweater and pants
                     under a winter coat. Insulating boots are a must.
                     Add a scarf, gloves, and hat for optimal comfort."
     elsif between_65_and_80?
@@ -24,11 +24,11 @@ module WolfAdvice
                       Bring a light jacket or sweater since it will be cool in the shade.
                       Try sandals or light sneakers on your feet."
     elsif between_40_and_65?
-      wolf_advice += " It's starting to get a bit colder out there. You should wear a T-shirt and jeans,
+      wolf_advice += " Since it's starting to get a bit colder out there, you should wear a T-shirt and jeans,
                       with a sweater on top. Add a mid-weight jacket or down vest for extra insulation.
                       It's definitely a good idea to wear boots to keep your feet warm."
     elsif between_20_and_40?
-      wolf_advice += " It's pretty cold today. Prepare for it with a T-shirt and jeans, covered by a sweater.
+      wolf_advice += " Since it's pretty cold today, prepare for it with a T-shirt and jeans, covered by a sweater.
                       Add a mid-weight jacket or down coat, depending on comfort. You'll probably want gloves and a
                       good pair of boots."
     elsif really_cold?
