@@ -107,13 +107,23 @@ a:visited {
   background: $light-blue;
   text-align: center;
   border-radius: 10px;
-  padding: 200px;
+  padding: 50px;
   margin-top: 200px;
   margin-left: 200px;
   margin-right: 200px;
   width: 50%;
   display: center;
   margin: 0 auto;
+}
+
+.wolf-advice {
+  padding: 15px;
+  text-align: left;
+  font-style: normal;
+}
+
+.wolf-says {
+  text-align: center;
 }
 
 .user-locations {
@@ -240,4 +250,38 @@ ul {
   background-color: $light-blue;
   padding: 50px;
   border-radius: 10px;
+}
+
+#location_city {
+  height: 20px;
+  width: 300px;
+  margin: 10px;
+}
+
+#location_state {
+  height: 20px;
+  width: 300px;
+  margin: 10px;
+}
+
+#location_zip {
+  height: 20px;
+  width: 300px;
+  margin: 10px;
+}
+
+#location_country {
+  height: 20px;
+  width: 300px;
+  margin: 10px;
+}
+
+label
+{
+    width: 150px;
+    display: inline-block;
+}
+input[type=text]
+{
+    display: inline-block;
 }
