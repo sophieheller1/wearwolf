@@ -25,7 +25,6 @@ describe 'Auth user can update profile' do
       click_button 'Your profile'
       fill_in 'Favorite location', with: 'Boston'
       choose 'cold'
-      choose 'F'
       click_button 'Update your profile'
       expect(page).to have_content 'Profile updated successfully.'
 
@@ -33,7 +32,6 @@ describe 'Auth user can update profile' do
 
       find_field('Favorite location').value.should eq 'Boston'
       expect(page).to have_content 'cold'
-      expect(page).to have_content 'F'
 
     end
   end

@@ -2,7 +2,11 @@ module WolfAdvice
   extend ActiveSupport::Concern
 
   def display_wolf_advice
-    wolf_says = get_weather_commentary + get_wolf_advice + account_for_preference
+    wolf_says = get_weather_commentary + get_wolf_advice
+    if !account_for_preference.nil?
+      wolf_says += account_for_preference
+    end
+    wolf_says
   end
 
   def get_wolf_advice
