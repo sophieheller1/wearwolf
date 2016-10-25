@@ -10,41 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021211508) do
+ActiveRecord::Schema.define(version: 20161022201943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "conditions", force: :cascade do |t|
-    t.integer "maxtemp",       null: false
-    t.integer "mintemp",       null: false
-    t.integer "precipitation", null: false
-    t.integer "humidity",      null: false
-    t.string  "description"
-  end
-
-  create_table "garments", force: :cascade do |t|
-    t.string  "name",      null: false
-    t.boolean "is_male"
-    t.boolean "is_female"
+    t.integer  "maxtemp",       null: false
+    t.integer  "mintemp",       null: false
+    t.integer  "precipitation", null: false
+    t.integer  "humidity",      null: false
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "location_id"
+    t.string   "zip"
+    t.index ["location_id"], name: "index_conditions_on_location_id", using: :btree
+    t.index ["user_id"], name: "index_conditions_on_user_id", using: :btree
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string  "city",      null: false
-    t.string  "state",     null: false
-    t.string  "zip",       null: false
-    t.string  "country",   null: false
-    t.integer "user_id",   null: false
-    t.string  "latitude"
-    t.string  "longitude"
+    t.string   "city",       null: false
+    t.string   "state",      null: false
+    t.string   "zip",        null: false
+    t.string   "country",    null: false
+    t.integer  "user_id",    null: false
+    t.string   "latitude"
+    t.string   "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_locations_on_user_id", using: :btree
-  end
-
-  create_table "suggestions", force: :cascade do |t|
-    t.integer "garment_id"
-    t.integer "condition_id"
-    t.index ["condition_id"], name: "index_suggestions_on_condition_id", using: :btree
-    t.index ["garment_id"], name: "index_suggestions_on_garment_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

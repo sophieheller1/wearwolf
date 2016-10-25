@@ -1,2 +1,7 @@
 <h1>Add a New Location</h1>
-<%= render 'form' %>
+<div class="info-form callout primary">
+  <%= render 'form' %>
+</div>
+<div class="back-link">
+  <h3><%= link_to 'Return Home', locations_path, method: :get %></h3>
+</div>

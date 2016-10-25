@@ -7,7 +7,6 @@ class Geolocation
   def initialize(ip)
     @ip = ip
     @data = get_location
-    # @data = default_location if city.empty?
   end
 
   def city
@@ -29,16 +28,6 @@ class Geolocation
   end
 
   def uri
-    # URI.parse(URI.encode("http://freegeoip.net/json/#{@ip}"))
     URI("http://freegeoip.net/json/#{@ip}")
   end
-
-  # def default_location
-  #   {
-  #     'ip' => @ip,
-  #     'latitude' => 32.6785,
-  #     'longitude' => 91.1826,
-  #     'city' => 'Transylvania'
-  #   }
-  # end
 end

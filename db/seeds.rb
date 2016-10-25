@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 weather_ranges = Condition.create([maxtemp: 100 , mintemp: 80 , precipitation: , humidity: ],
                                   [maxtemp: , mintemp:  , precipitation: , humidity:],
                                   [maxtemp: , mintemp:  , precipitation: , humidity:],
@@ -13,6 +16,7 @@ weather_ranges = Condition.create([maxtemp: 100 , mintemp: 80 , precipitation: ,
                                   [maxtemp: , mintemp:  , precipitation: , humidity:],
                                   [maxtemp: , mintemp:  , precipitation: , humidity:],
                                   [maxtemp: , mintemp:  , precipitation: , humidity:],)
+>>>>>>> master
 
 clothing_pieces = Garment.create([name: 'shirt'],
                                 [name: 'pants'],

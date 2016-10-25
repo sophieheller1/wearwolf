@@ -10,11 +10,11 @@ class Darksky
     @data = get_weather
   end
 
-  def high
+  def maxtemp
     @data['daily']['data'][0]['temperatureMax']
   end
 
-  def low
+  def mintemp
     @data['daily']['data'][0]['temperatureMin']
   end
 

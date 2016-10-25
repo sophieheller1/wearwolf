@@ -13,3 +13,4 @@ bundle install
 rake db:create db:migrate
 
 reference .env.example for necessary environment variables
+   

@@ -9,11 +9,13 @@
 </div>
 <br>
 <div class="clothing-suggestions success callout">
-  <h2>The wolf says:</h2>
-
-  <h5>It's HOT out there. You should wear a shirt, shorts, and little else.</h5>
+  <div class="wolf-says">
+    <h2>The wolf says:</h2>
+  </div>  
+  <div class="wolf-advice">
+  </div>
 </div>
-<div>
-  <%= link_to 'Return Home', locations_path  %>
+<div class="back-link top-padded">
+  <%= link_to 'Return Home', locations_path, method: :get  %>
 </div>
 <div id="zip" hidden="true"><%= @location.zip %></div>

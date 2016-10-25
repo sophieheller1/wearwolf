@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('.clothing-suggestions').hide();
   $('.get-weather').on('click', function(event){
     event.preventDefault();
 
@@ -9,7 +10,6 @@ $(document).ready(function() {
       method: "get",
       url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + zip + "&key="+ google_key,
     });
-
 
     get_coordinates.done(function(data){
       var lat  = data.results[0]['geometry']['location']['lat'];
@@ -25,7 +25,9 @@ $(document).ready(function() {
 
       get_weather.done(function(data){
         var high = data.daily.data[0]['temperatureMax'];
+        high = Math.round(high);
         var low = data.daily.data[0]['temperatureMin'];
+        low = Math.round(low);
         var precipitation = data.daily.data[0]['precipProbability'];
         precipitation = Math.round((precipitation * 100));
         var humidity = data.daily.data[0]['humidity'];
@@ -37,12 +39,15 @@ $(document).ready(function() {
         $('.humidity').append('Humidity: ' + humidity + '%');
         $('.summary').append(summary);
 
-
         var save_weather = $.ajax({
           method: "post",
           url: '/api/v1/conditions',
           data: { maxtemp: high, mintemp: low, precipitation: precipitation,
                   humidity: humidity, description: summary }
+        });
+        save_weather.done(function(data){
+          $('.clothing-suggestions').show();
+          $('.wolf-advice').append(data.wolfAdvice);
         });
       });
     });

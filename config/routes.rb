@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root 'locations#index'
   post 'locations/:id' => 'conditions#create'
 
-  resources :locations
+  resources :locations do
+    resources :garments
+  end
 
   namespace :api do
     namespace :v1 do

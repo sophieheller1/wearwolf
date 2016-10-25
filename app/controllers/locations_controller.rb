@@ -6,16 +6,21 @@ require 'dotenv-rails'
 Dotenv.load
 
 class LocationsController < ApplicationController
+  include WolfAdvice
 
-  def index  # automatically shows current location
+  def index
     if user_signed_in?
       @user = current_user
     else
       redirect_to new_user_session_path
     end
+
     @ip = request.ip
     @geolocation = Geolocation.new(@ip)
     @darksky = Darksky.new(@geolocation.latitude, @geolocation.longitude)
+    @current_condition = @darksky
+    @wolf_advice = display_wolf_advice
+
 
     @locations = Location.where(user_id: @user.id)
 
@@ -25,22 +30,6 @@ class LocationsController < ApplicationController
   def show
     @user = current_user
     @location = Location.find(params[:id])
-
-    @weathercombos = Condition::WEATHERCOMBOS
-
-    # if @condition.maxtemp >= 80
-    #   if @condition.humidity >= 50%
-    #     if @condition.precipitation >= 40%
-    #       best_fit = @weathercombos[0]
-    #     elsif @condition.precipitation < 40%
-    #       best_fit = @weathercombos[2]
-    #     end
-    #   elsif @condition.humidity < 50%
-    #     best_fit = @weathercombos[1]
-    #   end
-    # end
-
-
   end
 
   def new
@@ -57,7 +46,7 @@ class LocationsController < ApplicationController
     @location.user = current_user
 
     if @location.save
-      redirect_to locations_path
+      redirect_to location_path(@location)
       flash[:notice] = "Location created."
     else
       flash[:notice] = @location.errors.full_messages.join(', ')
@@ -70,7 +59,4 @@ class LocationsController < ApplicationController
   def location_params
     params.require(:location).permit(:user, :city, :state, :zip, :country, :latitude, :longtitude)
   end
-
-
-
 end

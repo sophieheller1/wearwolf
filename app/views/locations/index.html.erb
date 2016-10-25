@@ -3,16 +3,20 @@
 <div class="weather-info callout primary">
   <div class="greeting">
     <h3>The weather for your current location is: <br></h2>
-    <span>High: <%= @darksky.high %> Low: <%= @darksky.low %></span><br>
+    <span>High: <%= @darksky.maxtemp %> Low: <%= @darksky.mintemp %></span><br>
     <span>Chance of precipitation: <%= (@darksky.precipitation * 100).round %>%
           Chance of humidity: <%= (@darksky.humidity * 100).round %>%</span><br>
     <span><%= @darksky.summary %></span>
   </div>
 </div>
 <br>
-<div class="clothing-suggestions success callout">
-  <h2>The wolf says:</h2>
-  <h5>It's HOT out there. You should wear a shirt, shorts, and little else.</h5>
+<div class="weather-info success callout">
+  <div class="wolf-advice">
+    <div class="wolf-says">
+      <h2>The wolf says:</h2>
+    </div>
+    <%=@wolf_advice%>
+  </div>
 </div>
 
 <h2> Trying to get dressed in a different location?</h2>
@@ -20,7 +24,7 @@
   <h3>Choose from Your Locations: </h3>
   <ul>
     <% @locations.each do |location| %>
-      <li><%= link_to location.city , locations_path(location), method: :get %>, <%= location.state %>, <%= location.zip %>, <%= location.country %> </li>
+      <li><%= link_to location.city , location_path(location), method: :get %>, <%= location.state %>, <%= location.zip %>, <%= location.country %> </li>
     <% end %>
   </ul>
 </div>

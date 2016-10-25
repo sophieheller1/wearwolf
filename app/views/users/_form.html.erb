@@ -7,10 +7,6 @@
     <%= f.label :preference, "I run?"%><br>
     <div class="space-form"><%= f.collection_radio_buttons(:preference, @preference_collection, :first, :last) %></div>
   </div>
-  <div class="change-gender top-padded">
-    <%= f.label :gender %>
-    <%= f.collection_radio_buttons(:gender, @gender_collection, :first, :last) %>
-  </div>
   <div class="actions top-padded">
     <%= f.submit 'Update your profile' %>
   </div>

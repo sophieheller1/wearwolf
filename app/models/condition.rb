@@ -1,6 +1,6 @@
 class Condition < ActiveRecord::Base
-  has_many :suggestions
-  has_many :garments, through: :suggestions
+  belongs_to :user
+  belongs_to :location
 
   validates :maxtemp, presence: true
   validates :mintemp, presence: true
