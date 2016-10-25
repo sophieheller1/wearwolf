@@ -3,7 +3,7 @@
 <div class="weather-info callout primary">
   <div class="greeting">
     <h3>The weather for your current location is: <br></h2>
-    <span>High: <%= @darksky.maxtemp %> Low: <%= @darksky.mintemp %></span><br>
+    <span>High: <%= @darksky.maxtemp.round %> Low: <%= @darksky.mintemp.round %></span><br>
     <span>Chance of precipitation: <%= (@darksky.precipitation * 100).round %>%
           Chance of humidity: <%= (@darksky.humidity * 100).round %>%</span><br>
     <span><%= @darksky.summary %></span>
