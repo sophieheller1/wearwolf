@@ -47,7 +47,7 @@ $(document).ready(function() {
         });
         save_weather.done(function(data){
           $('.clothing-suggestions').show();
-          $('.clothing-suggestions').append(data.wolfAdvice);
+          $('.wolf-advice').append(data.wolfAdvice);
         });
       });
     });
