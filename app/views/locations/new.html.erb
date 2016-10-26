@@ -5,31 +5,27 @@
 </div>
 
 <div class="add-location-form">
-  <form id="address" method="post" action="/locations/params[:location]">
-        <row>
-          <div class="label">City</div>
-          <div class="wideField" colspan="3"><input class="field" id="locality"
-                disabled="true"></input></div>
-        </row>
-        <row>
-          <div class="label">State</div>
-          <div class="slimField"><input class="field"
-                id="administrative_area_level_1" disabled="true"></input></div>
-        </row>
-        <row>
-          <div class="label">Zip</div>
-          <div class="wideField"><input class="field" id="postal_code"
-                disabled="true"></input></div>
-        </row>
-        <row>
-          <div class="label">Country</div>
-          <div class="wideField" colspan="3"><input class="field"
-                id="country" disabled="true"></input></div>
-        </row>
-      <div class="actions top-padded">
-        <input type="submit" value="Add Location" class="search-button">
-      </div>
-  </form>
+  <%= form_for(@location) do |f|%>
+        <div class="field">
+          <%= f.label :city, "City" %>
+          <%= f.text_field :city, id: "locality", disabled: true  %>
+        </div>
+        <div class="field">
+          <%= f.label :state, "State" %>
+          <%= f.text_field :state, id: "administrative_area_level_1", disabled: true %>
+        </div>
+        <div class="field">
+          <%= f.label :zip, "Zip" %>
+          <%= f.text_field :zip, id: "postal_code", disabled: "true" %>
+        </div>
+        <div class="field">
+          <%= f.label :country, "Country" %>
+          <%= f.text_field :country, id: "country", disabled: "true" %>
+        </div>
+        <div class="actions top-padded">
+          <%= f.submit "Add Location", class: "search-button" %>
+        </div>
+    <% end %>
 </div>
 <script>
   var placeSearch, autocomplete;
