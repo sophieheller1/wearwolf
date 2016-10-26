@@ -1,32 +1,35 @@
 <h1>Add a New Location</h1>
 <div id="locationField">
-  <input placeholder="Enter your city" id="autocomplete"
+  <input placeholder="Enter your address" id="autocomplete"
            type="text"></input>
 </div>
 
 <div class="add-location-form">
-<table id="address">
-      <tr>
-        <td class="label">City</td>
-        <td class="wideField" colspan="3"><input class="field" id="locality"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">State</td>
-        <td class="slimField"><input class="field"
-              id="administrative_area_level_1" disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">Zip code</td>
-        <td class="wideField"><input class="field" id="postal_code"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">Country</td>
-        <td class="wideField" colspan="3"><input class="field"
-              id="country" disabled="true"></input></td>
-      </tr>
-    </table>
+  <form id="address" method="post" action="/locations/params[:location]">
+        <row>
+          <div class="label">City</div>
+          <div class="wideField" colspan="3"><input class="field" id="locality"
+                disabled="true"></input></div>
+        </row>
+        <row>
+          <div class="label">State</div>
+          <div class="slimField"><input class="field"
+                id="administrative_area_level_1" disabled="true"></input></div>
+        </row>
+        <row>
+          <div class="label">Zip</div>
+          <div class="wideField"><input class="field" id="postal_code"
+                disabled="true"></input></div>
+        </row>
+        <row>
+          <div class="label">Country</div>
+          <div class="wideField" colspan="3"><input class="field"
+                id="country" disabled="true"></input></div>
+        </row>
+      <div class="actions top-padded">
+        <input type="submit" value="Add Location" class="search-button">
+      </div>
+  </form>
 </div>
 <script>
   var placeSearch, autocomplete;
@@ -78,7 +81,7 @@
   }
 
 </script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&callback=initAutocomplete"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&key=<%= ENV['GOOGLE_MAPS_GEOCODING_API_KEY']%>&callback=initAutocomplete"></script>
 </script>
 
 <div class="back-link">

@@ -284,3 +284,42 @@ label {
 input[type=text]{
   display: inline-block;
 }
+
+.add-location-form {
+  background: $light-blue;
+  border-radius: 10px;
+  padding: 50px;
+  width: 80%;
+  display: center;
+  margin: 0 auto;
+}
+
+#locality{
+  height: 20px;
+  width: 300px;
+  margin: 10px;
+}
+
+#administrative_area_level_1{
+  height: 20px;
+  width: 300px;
+  margin: 10px;
+}
+
+#postal_code{
+  height: 20px;
+  width: 300px;
+  margin: 10px;
+}
+
+#country{
+  height: 20px;
+  width: 300px;
+  margin: 10px;
+}
+
+#autocomplete {
+  height: 20px;
+  width: 300px;
+  margin: 10px;
+}
