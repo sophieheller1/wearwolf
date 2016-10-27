@@ -1,6 +1,5 @@
   <h1><%= @location.city %>, <%= @location.state %>, <%= @location.zip %>, <%= @location.country %> </h1>
-  <h3>The wolf has you covered. Click for wolf advice.</h3>
-  <div class="get-weather user-buttons"><%= button_to 'Get the Weather', locations_path(@location)  %></div>
+  <div class="get-weather user-buttons"><h3>The wolf has you covered. Click for wolf advice.</h3><%= button_to 'Get the Weather', locations_path(@location)  %></div>
 <br><br>
 <div class="weather-info success callout">
   <h2>Today's weather conditions are :</h2>
