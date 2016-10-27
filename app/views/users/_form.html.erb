@@ -4,9 +4,8 @@
     <%= f.text_field :favorite, placeholder: 'Transylvania' %>
   </div>
   <div class="row top-padded">
-    <%= f.label :preference, "My internal temperature runs:"%><br>
-    <div class="space-form"><%= f.collection_radio_buttons(:preference, @preference_collection, :first, :last) %></div>
-  </div>
+    <%= f.label :preference, "My internal temperature runs:"%>
+    <%= f.collection_radio_buttons(:preference, @preference_collection, :first, :last) %>
   <div class="actions top-padded">
     <%= f.submit 'Update your profile' %>
   </div>
