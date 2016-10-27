@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('.clothing-suggestions').hide();
-  $('.weather-info').hide();
+  $('.weather-info-show').hide();
   $('.get-weather').on('click', function(event){
     event.preventDefault();
 
@@ -48,9 +48,9 @@ $(document).ready(function() {
         });
         save_weather.done(function(data){
           $('.wolf-image').hide();
-          $('.weather-info').show();
+          $('.weather-info-show').show();
           $('.clothing-suggestions').show();
-          $('.clothing-suggestions').append(data.wolfAdvice);
+          $('.wolf-advice').append(data.wolfAdvice);
         });
       });
     });

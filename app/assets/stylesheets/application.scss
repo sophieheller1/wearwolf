@@ -103,6 +103,19 @@ a:visited {
   margin: 0 auto;
 }
 
+.weather-info-show {
+  background: $light-blue;
+  text-align: center;
+  border-radius: 10px;
+  padding: 50px;
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 50%;
+  display: center;
+  margin: 0 auto;
+}
+
 .clothing-suggestions {
   background: $light-blue;
   text-align: center;
@@ -117,7 +130,10 @@ a:visited {
 }
 
 .wolf-advice {
-  padding: 15px;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
   text-align: left;
   font-style: normal;
 }
