@@ -24,7 +24,7 @@
   <h3>Choose from Your Locations: </h3>
   <ul>
     <% @locations.each do |location| %>
-      <li><%= link_to location.city , location_path(location), method: :get %>, <%= location.state %>, <%= location.zip %>, <%= location.country %> </li>
+      <li><%= link_to location.city , location_path(location), method: :get %>, <%= location.state %> <%= location.zip %>, <%= location.country %> </li>
     <% end %>
   </ul>
 </div>
