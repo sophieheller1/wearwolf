@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $('.clothing-suggestions').hide();
+  $('.weather-info').hide();
   $('.get-weather').on('click', function(event){
     event.preventDefault();
 
@@ -46,6 +47,8 @@ $(document).ready(function() {
                   humidity: humidity, description: summary }
         });
         save_weather.done(function(data){
+          $('.wolf-image').hide();
+          $('.weather-info').show();
           $('.clothing-suggestions').show();
           $('.clothing-suggestions').append(data.wolfAdvice);
         });

@@ -1,4 +1,5 @@
   <h1><%= @location.city %>, <%= @location.state %>, <%= @location.zip %>, <%= @location.country %> </h1>
+  <h3>The wolf has you covered. Click for wolf advice.</h3>
   <div class="get-weather user-buttons"><%= button_to 'Get the Weather', locations_path(@location)  %></div>
 <br><br>
 <div class="weather-info success callout">
@@ -8,10 +9,14 @@
   <div class="summary"></div>
 </div>
 <br>
+<div class="wolf-image">
+  <%= image_tag("/assets/wolfclothing.jpg") %>
+</div>
 <div class="clothing-suggestions success callout">
   <div class="wolf-says">
-    <h2>The wolf says:</h2>
-  </div>  
+    <h2>The wolf says: </h2>
+  </div>
+
   <div class="wolf-advice">
   </div>
 </div>
