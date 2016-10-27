@@ -58,7 +58,7 @@ module WolfAdvice
     preference_add_on = ""
     if you_run_cold?
       preference_add_on += " Since you run cold, the wolf thinks you should bring an extra layer."
-    elsif you_run_cold?
+    elsif you_run_hot?
       preference_add_on =+ " Since you run hot, the wolf advises you to leave that extra layer at home."
     end
   end
