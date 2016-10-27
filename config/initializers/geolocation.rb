@@ -2,7 +2,7 @@ require 'json'
 require 'net/http'
 
 class Geolocation
-  attr_reader :ip
+  attr_reader :ip, :city
 
   def initialize(ip)
     @ip = ip

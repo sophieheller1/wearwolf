@@ -1,7 +1,7 @@
 <h1>Add a New Location</h1>
 <h3>Enter street address or fill in the fields below.</h3>
 <div id="locationField">
-  <input placeholder="Enter your address" id="autocomplete"
+  <input placeholder="Enter new address" id="autocomplete"
            type="text"></input>
 </div>
 
@@ -9,19 +9,19 @@
   <%= form_for(@location) do |f|%>
         <div class="field">
           <%= f.label :city, "City" %>
-          <%= f.text_field :city, id: "locality", disabled: true  %>
+          <%= f.text_field :city, id: "locality", disabled: false  %>
         </div>
         <div class="field">
           <%= f.label :state, "State" %>
-          <%= f.text_field :state, id: "administrative_area_level_1", disabled: true %>
+          <%= f.text_field :state, id: "administrative_area_level_1", disabled: false %>
         </div>
         <div class="field">
           <%= f.label :zip, "Zip" %>
-          <%= f.text_field :zip, id: "postal_code", disabled: "true" %>
+          <%= f.text_field :zip, id: "postal_code", disabled: false %>
         </div>
         <div class="field">
           <%= f.label :country, "Country" %>
-          <%= f.text_field :country, id: "country", disabled: "true" %>
+          <%= f.text_field :country, id: "country", disabled: false %>
         </div>
         <div class="actions top-padded">
           <%= f.submit "Add Location", class: "search-button" %>

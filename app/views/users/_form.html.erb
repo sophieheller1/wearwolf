@@ -1,10 +1,10 @@
 <%= form_for(@user) do |f| %>
   <div class="row top-padded">
-    <%= f.label :favorite, "Favorite location" %>
+    <%= f.label :favorite, "Favorite Vacation Spot" %>
     <%= f.text_field :favorite, placeholder: 'Transylvania' %>
   </div>
   <div class="row top-padded">
-    <%= f.label :preference, "I run?"%><br>
+    <%= f.label :preference, "My internal temperature runs:"%><br>
     <div class="space-form"><%= f.collection_radio_buttons(:preference, @preference_collection, :first, :last) %></div>
   </div>
   <div class="actions top-padded">

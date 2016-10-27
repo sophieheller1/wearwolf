@@ -1,6 +1,5 @@
 require './config/initializers/geolocation'
 require './config/initializers/darksky'
-require 'pry'
 
 require 'dotenv-rails'
 Dotenv.load
