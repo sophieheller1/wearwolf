@@ -1,7 +1,8 @@
 require 'rails_helper'
 require 'spec_helper'
+require 'capybara-webkit'
 
-describe 'User can' do
+describe 'User can', js: true do
   let!(:user_1) { FactoryGirl.create(:user) }
   let!(:location_1) { FactoryGirl.create(:location, user_id: user_1.id) }
 

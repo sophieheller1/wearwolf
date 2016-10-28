@@ -22,6 +22,7 @@ gem 'typhoeus'
 
 group :development, :test do
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
   gem 'pry-rails'
@@ -33,6 +34,7 @@ end
 
 group :test do
   gem 'coveralls', require: false
+
 end
 
 group :production do
