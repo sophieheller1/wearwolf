@@ -1,17 +1,12 @@
-# require 'spec_helper'
-# require 'rails_helper'
-#
-# feature 'google results', vcr: true do
-#   let!(:user) { FactoryGirl.create(:user) }
-#   let!(:location) { FactoryGirl.create(:location, user: user, latitude: 42.3808757, longitude: -71.1002881) }
+require 'rails_helper'
 
-#
-#   scenario 'google api makes call to find weather' do
-#     visit "/locations/#{location.id}"
-#     click_link('Get the weather')
-#
-#     expect(page).to have_content("High")
-#     expect(page).to have_content("Humidity")
-#   end
-# end
-    
+describe Darksky do
+  it 'returns an array of hashes' do
+  	VCR.use_cassette('fake_weather') do
+  	  fake_weather = Darksky.new(42.3601, 71.0589)
+  	  expect(fake_weather.data).to be_a Hash
+  	  expect(fake_weather.data['latitude']).to eq(42.3601)
+  	end
+  end
+end
+
