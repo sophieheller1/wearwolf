@@ -6,7 +6,7 @@
 
 # WEARWOLF
 
-Application Link: (wearwolf.herokuapp.com)
+Application Link: https://wearwolf.herokuapp.com
 
 List of Features
 ----------------
