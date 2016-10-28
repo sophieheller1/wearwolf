@@ -6,7 +6,7 @@
 
 # WEARWOLF
 
-Application Link: [wearwolf.herokuapp.com]
+Application Link: (wearwolf.herokuapp.com)
 
 List of Features
 ----------------
@@ -31,7 +31,7 @@ Outline of Technologies
 * Dark Sky API
 
 
-To Run Locally:
+To Run Locally
 ---------------
 1. git clone https://github.com/sophieheller1/wearwolf.git
 2. cd wearwolf
